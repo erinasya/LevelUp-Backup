@@ -1,0 +1,13 @@
+LEVELUP FRONTEND — CARA MENJALANKAN
+
+1. Ekstrak folder LevelUp.
+2. Buka folder LevelUp di VS Code.
+3. Pasang ekstensi Live Server jika belum ada.
+4. Klik kanan index.html lalu pilih Open with Live Server.
+
+AKUN DEMO
+User:  user@levelup.id / user123
+Admin: admin@levelup.id / admin123
+
+CATATAN
+Ini frontend prototype HTML, CSS, JavaScript vanilla. Data disimpan dalam LocalStorage browser. Verifikasi, upload file, dan autentikasi merupakan simulasi; belum ada backend atau database server. Untuk mengulang data demo, bersihkan LocalStorage dengan key yang diawali levelup_v1_ dari DevTools.
