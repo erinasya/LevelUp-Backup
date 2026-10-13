@@ -69,3 +69,53 @@
         grid-template-columns: 1fr;
     }
 }
+
+.welcome-banner {
+    display: flex;
+    align-items: center;
+    min-height: 300px;
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(203, 231, 255, 0.97) 0%,
+            rgba(203, 231, 255, 0.88) 28%,
+            rgba(219, 192, 232, 0.62) 55%,
+            rgba(248, 244, 236, 0.18) 100%
+        ),
+        url("../assets/images/backgrounds/levelup-banner.png");
+
+    background-size: cover, cover;
+    background-position: center, center 55%;
+    background-repeat: no-repeat, no-repeat;
+}
+
+.welcome-banner > div {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+}
+
+.welcome-banner .btn {
+    margin-top: 8px;
+}
+
+.welcome-banner h1 {
+    font-size: clamp(2rem, 3.1vw, 3.2rem);
+}
+
+@media (max-width: 780px) {
+    .welcome-banner {
+        min-height: 300px;
+        padding: 24px;
+
+        background-position: center, 58% center;
+    }
+
+    .welcome-banner > div {
+        max-width: 100%;
+    }
+}
