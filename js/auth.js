@@ -17,7 +17,7 @@
         if (!account) {
             return {
                 ok: false,
-                message: 'Email atau password belum sesuai.'
+                message: 'Email or password does not match.'
             };
         }
 

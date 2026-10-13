@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,7 @@
             <header
                 class="topbar"
                 id="site-header"
-                aria-label="Navigasi LevelUp"
+                aria-label="LevelUp navigation"
             ></header>
 
             <aside
@@ -35,17 +35,17 @@
                         <span class="eyebrow">CHALLENGE BUILDER</span>
 
                         <h1 id="admin-challenge-form-title">
-                            Buat Challenge
+                            Create Challenge
                         </h1>
 
                         <p>
-                            Tentukan aktivitas, kriteria, bukti, dan manfaat
-                            sebelum dipublikasikan.
+                            Define the activity, criteria, proof, and rewards
+                            before publishing.
                         </p>
                     </div>
 
                     <a href="challenges.html" class="btn btn-ghost">
-                        ← Kembali
+                        ← Back
                     </a>
                 </div>
 
@@ -58,11 +58,10 @@
                                 <span class="number">01</span>
 
                                 <div>
-                                    <h2>Informasi dasar</h2>
+                                    <h2>Basic information</h2>
 
                                     <p class="small mb-0">
-                                        Nama dan tujuan yang akan dilihat
-                                        pengguna.
+                                        The name and goal that users will see.
                                     </p>
                                 </div>
                             </div>
@@ -71,7 +70,7 @@
 
                                 <div class="field field-full">
                                     <label for="challenge-title">
-                                        Nama challenge *
+                                        Challenge name *
                                     </label>
 
                                     <input id="challenge-title" required>
@@ -79,7 +78,7 @@
 
                                 <div class="field field-full">
                                     <label for="challenge-description">
-                                        Deskripsi singkat *
+                                        Short description *
                                     </label>
 
                                     <textarea
@@ -90,7 +89,7 @@
 
                                 <div class="field">
                                     <label for="challenge-category">
-                                        Kategori *
+                                        Category *
                                     </label>
 
                                     <select id="challenge-category">
@@ -110,7 +109,7 @@
 
                                 <div class="field">
                                     <label for="challenge-difficulty">
-                                        Tingkat kesulitan
+                                        Difficulty level
                                     </label>
 
                                     <select id="challenge-difficulty">
@@ -122,12 +121,12 @@
 
                                 <div class="field">
                                     <label for="challenge-duration">
-                                        Durasi
+                                        Duration
                                     </label>
 
                                     <input
                                         id="challenge-duration"
-                                        value="5 hari"
+                                        value="5 days"
                                     >
                                 </div>
 
@@ -155,8 +154,8 @@
                                     <h2>Objective &amp; tasks</h2>
 
                                     <p class="small mb-0">
-                                        Jelaskan hasil yang ingin dicapai
-                                        dan langkahnya.
+                                        Describe the intended outcome and
+                                        the steps to achieve it.
                                     </p>
                                 </div>
                             </div>
@@ -170,18 +169,18 @@
 
                                     <textarea
                                         id="challenge-objective"
-                                        placeholder="Apa yang ingin dikembangkan?"
+                                        placeholder="What do you want to develop?"
                                     ></textarea>
                                 </div>
 
                                 <div class="field field-full">
                                     <label for="challenge-tasks">
-                                        Tasks (satu tugas per baris)
+                                        Tasks (one task per line)
                                     </label>
 
                                     <textarea
                                         id="challenge-tasks"
-                                        placeholder="Pahami brief&#10;Kerjakan aktivitas&#10;Catat hasil"
+                                        placeholder="Understand the brief&#10;Complete the activity&#10;Record the result"
                                     ></textarea>
                                 </div>
 
@@ -193,7 +192,7 @@
                                     <textarea
                                         id="challenge-criteria"
                                         required
-                                        placeholder="Apa syarat yang harus dipenuhi agar dianggap selesai?"
+                                        placeholder="What requirements must be met for this to count as complete?"
                                     ></textarea>
                                 </div>
 
@@ -208,8 +207,8 @@
                                     <h2>Proof &amp; verification</h2>
 
                                     <p class="small mb-0">
-                                        Pilih bukti yang relevan dengan
-                                        jenis aktivitas.
+                                        Choose proof relevant to the
+                                        type of activity.
                                     </p>
                                 </div>
                             </div>
@@ -305,7 +304,7 @@
                                     </label>
 
                                     <select id="challenge-prerequisite">
-                                        <option value="">Tidak ada</option>
+                                        <option value="">None</option>
                                     </select>
                                 </div>
 
@@ -320,8 +319,7 @@
                                     <h2>Publication</h2>
 
                                     <p class="small mb-0">
-                                        Simpan sebagai draft atau
-                                        publikasikan.
+                                        Save as a draft or publish.
                                     </p>
                                 </div>
                             </div>
@@ -333,7 +331,7 @@
 
                                 <select id="challenge-status">
                                     <option value="draft">Draft</option>
-                                    <option value="active">Aktif</option>
+                                    <option value="active">Active</option>
                                     <option value="archived">Archived</option>
                                 </select>
                             </div>
@@ -342,14 +340,14 @@
                                 class="notice warning"
                                 style="margin-top: 14px;"
                             >
-                                Sebelum publish, pastikan tujuan, kriteria
-                                penyelesaian, dan bukti sudah jelas.
+                                Before publishing, make sure the goal, completion
+                                criteria, and proof are clear.
                             </div>
                         </section>
 
                         <div class="between">
                             <a href="challenges.html" class="btn btn-ghost">
-                                Batal
+                                Cancel
                             </a>
 
                             <div class="heading-actions">
@@ -358,14 +356,14 @@
                                     type="button"
                                     id="save-challenge-draft"
                                 >
-                                    Simpan Draft
+                                    Save Draft
                                 </button>
 
                                 <button
                                     class="btn btn-primary"
                                     type="submit"
                                 >
-                                    Simpan Challenge ↗
+                                    Save Challenge ↗
                                 </button>
                             </div>
                         </div>
@@ -377,35 +375,35 @@
                         <article class="card card-blue">
                             <span class="eyebrow">DESIGN PRINCIPLE</span>
 
-                            <h3>Challenge yang baik</h3>
+                            <h3>What makes a good challenge</h3>
 
                             <div class="criteria-list">
 
                                 <div class="criteria-row">
                                     <span class="check">✓</span>
                                     <span>
-                                        Tujuan spesifik dan realistis.
+                                        A specific, realistic goal.
                                     </span>
                                 </div>
 
                                 <div class="criteria-row">
                                     <span class="check">✓</span>
                                     <span>
-                                        Kriteria penyelesaian bisa dipahami.
+                                        Clear completion criteria.
                                     </span>
                                 </div>
 
                                 <div class="criteria-row">
                                     <span class="check">✓</span>
                                     <span>
-                                        Bukti sesuai dengan aktivitas.
+                                        Proof that matches the activity.
                                     </span>
                                 </div>
 
                                 <div class="criteria-row">
                                     <span class="check">✓</span>
                                     <span>
-                                        Reward punya fungsi yang jelas.
+                                        Rewards with a clear purpose.
                                     </span>
                                 </div>
 
@@ -413,11 +411,11 @@
                         </article>
 
                         <article class="card">
-                            <h3>Preview ringkas</h3>
+                            <h3>Quick preview</h3>
 
                             <div id="challenge-form-preview">
                                 <p class="small">
-                                    Isi informasi dasar untuk melihat preview.
+                                    Enter basic information to see a preview.
                                 </p>
                             </div>
                         </article>

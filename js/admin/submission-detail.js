@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!sub) {
         document.getElementById('admin-review-notice').innerHTML = LevelUpUI.emptyState(
-            'Tidak ada submission',
-            'Submission akan muncul di sini setelah user mengirim bukti.',
-            '<a href="submissions.html" class="btn btn-secondary">Kembali ke Queue</a>'
+            'No submissions found',
+            'Submissions will appear here after users submit proof.',
+            '<a href="submissions.html" class="btn btn-secondary">Back to Queue</a>'
         );
 
         document.getElementById('admin-review-form').classList.add('hidden');
@@ -32,20 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
         LevelUpUI.statusBadge(sub.status);
 
     document.getElementById('review-proof-preview').textContent =
-        sub.filename ? '📎 ' + sub.filename : '📝 Refleksi / catatan';
+        sub.filename ? '📎 ' + sub.filename : '📝 Reflection / notes';
 
     document.getElementById('review-proof-meta').textContent =
         `Proof type: ${c?.proofType || '—'} · Verification: ${c?.verification || '—'}`;
 
     document.getElementById('review-reflection').textContent =
-        sub.reflection || 'Tidak ada refleksi';
+        sub.reflection || 'No reflection provided';
 
     document.getElementById('review-extra').textContent = sub.extra || '—';
 
     document.getElementById('review-criteria').innerHTML = `
         <div class="criteria-row">
             <span class="check">✓</span>
-            <span>${LevelUpUI.escapeHTML(c?.criteria || 'Tidak ada kriteria')}</span>
+            <span>${LevelUpUI.escapeHTML(c?.criteria || 'No criteria provided')}</span>
         </div>
         ${(c?.tasks || []).map(t => `
             <div class="criteria-row">
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('review-method').innerHTML = `
         <span class="badge lavender">${LevelUpUI.escapeHTML(c?.verification || 'Not set')}</span>
         <p class="small" style="margin-top:9px">
-            Periksa bukti terhadap kriteria. Indikator otomatis tidak menjadi keputusan pelanggaran final.
+            Review proof against the criteria. Automated indicators are not a final violation decision.
         </p>
     `;
 
@@ -77,15 +77,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             `)
-            .join('') || '<p class="small muted">Belum ada keputusan sebelumnya.</p>';
+            .join('') || '<p class="small muted">No previous decisions.</p>';
 
     if (sub.status === 'approved' || sub.status === 'rejected') {
         document.getElementById('admin-review-form').innerHTML = `
             <span class="eyebrow">FINAL DECISION</span>
-            <h2>Keputusan sudah tersimpan</h2>
-            <p>Submission ini sudah memiliki keputusan final. Jika perlu koreksi, gunakan proses banding atau submission ulang sesuai aturan produk.</p>
-            <div class="notice">${LevelUpUI.escapeHTML(sub.reviewReason || 'Tidak ada catatan tambahan.')}</div>
-            <a href="submissions.html" class="btn btn-secondary" style="margin-top:14px">Kembali ke Queue</a>
+            <h2>Decision already recorded</h2>
+            <p>This submission already has a final decision. For corrections, follow the product's appeal or resubmission process.</p>
+            <div class="notice">${LevelUpUI.escapeHTML(sub.reviewReason || 'No additional notes.')}</div>
+            <a href="submissions.html" class="btn btn-secondary" style="margin-top:14px">Back to Queue</a>
         `;
     } else {
         document.getElementById('admin-review-form').addEventListener('submit', e => {
@@ -95,30 +95,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 reason = document.getElementById('review-reason').value.trim();
 
             if (decision === 'rejected' && !reason) {
-                LevelUpUI.toast('Alasan penolakan wajib diisi.', 'error');
+                LevelUpUI.toast('A reason is required when rejecting a submission.', 'error');
                 return;
             }
 
             if (
                 ['approved', 'rejected'].includes(sub.status) &&
-                !confirm('Submission sudah memiliki keputusan. Simpan perubahan keputusan?')
+                !confirm('This submission already has a decision. Save the change?')
             ) {
                 return;
             }
 
             if (decision === 'approved') {
                 if (!LevelUpProgression.approveSubmission(sub.id)) {
-                    LevelUpUI.toast('Keputusan tidak dapat disimpan.', 'error');
+                    LevelUpUI.toast('The decision could not be saved.', 'error');
                     return;
                 }
             } else {
                 if (!LevelUpProgression.rejectSubmission(sub.id, reason)) {
-                    LevelUpUI.toast('Keputusan tidak dapat disimpan.', 'error');
+                    LevelUpUI.toast('The decision could not be saved.', 'error');
                     return;
                 }
             }
 
-            LevelUpUI.toast('Keputusan tersimpan.');
+            LevelUpUI.toast('Decision saved.');
 
             setTimeout(() => location.href = 'submissions.html', 500);
         });

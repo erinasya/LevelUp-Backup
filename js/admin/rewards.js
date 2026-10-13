@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </td>
                     <td>${a.criteria}</td>
                     <td>${a.xp}</td>
-                    <td>${a.unlock ? LevelUpData.challengeById(a.unlock)?.title || a.unlock : 'Tidak ada'}</td>
+                    <td>${a.unlock ? LevelUpData.challengeById(a.unlock)?.title || a.unlock : 'None'}</td>
                     <td>${LevelUpUI.statusBadge('active')}</td>
                 </tr>
             `)

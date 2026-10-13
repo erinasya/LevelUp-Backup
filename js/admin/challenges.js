@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>
                     <div class="admin-table-actions">
                         <a class="btn btn-secondary btn-sm" href="challenge-form.html?id=${c.id}">Edit</a>
-                        <button class="btn btn-ghost btn-sm" data-archive-challenge="${c.id}">${c.status === 'archived' ? 'Aktifkan' : 'Arsipkan'}</button>
+                        <button class="btn btn-ghost btn-sm" data-archive-challenge="${c.id}">${c.status === 'archived' ? 'Activate' : 'Archive'}</button>
                     </div>
                 </td>
             </tr>
@@ -58,9 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!list.length) {
             empty.innerHTML = LevelUpUI.emptyState(
-                'Tidak ada challenge',
-                'Coba ubah filter atau buat challenge baru.',
-                '<a href="challenge-form.html" class="btn btn-primary">Buat Challenge</a>'
+                'No challenges found',
+                'Try changing the filters or create a new challenge.',
+                '<a href="challenge-form.html" class="btn btn-primary">Create Challenge</a>'
             );
         }
 
@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 LevelUpUI.toast(
                     c.status === 'archived'
-                        ? 'Challenge diarsipkan.'
-                        : 'Challenge diaktifkan.'
+                        ? 'Challenge archived.'
+                        : 'Challenge activated.'
                 );
 
                 render();

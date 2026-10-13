@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!list.length) {
             empty.innerHTML = LevelUpUI.emptyState(
-                'Belum ada riwayat',
-                'Keputusan yang dibuat pada submission review akan muncul di sini.'
+                'No history yet',
+                'Decisions made during submission reviews will appear here.'
             );
         }
     }

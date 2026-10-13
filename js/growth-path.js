@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pct = Math.round(completed / (cs.length || 1) * 100);
 
     document.getElementById('path-progress-label').textContent =
-        `${completed} dari ${cs.length} tahap selesai`;
+        `${completed} of ${cs.length} stages complete`;
 
     document.getElementById('path-progress-percent').textContent =
         pct + '%';
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('path-stage-count').textContent = cs.length;
 
     document.getElementById('path-current').textContent =
-        completed >= cs.length ? 'Selesai' : `Tahap ${completed + 1}`;
+        completed >= cs.length ? 'Complete' : `Stage ${completed + 1}`;
 
     document.getElementById('path-stages').innerHTML = cs
         .map((c, i) => {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const locked = !done && !preDone;
 
-            return `<div class="timeline-item ${done ? 'done' : active ? 'current' : ''}"><div class="timeline-marker">${done ? '✓' : i + 1}</div><div class="timeline-content card" style="padding:15px"><div class="between"><div><span class="eyebrow">STAGE ${String(i + 1).padStart(2, '0')} · ${LevelUpUI.escapeHTML(stageTitle)}</span><h3>${LevelUpUI.escapeHTML(c.title)}</h3></div>${LevelUpUI.statusBadge(done ? 'completed' : locked ? 'locked' : active ? 'in-progress' : 'active')}</div><p>${LevelUpUI.escapeHTML(c.description)}</p><div class="quick-stats"><span class="badge">${c.duration}</span><span class="badge yellow">${c.xp} XP</span></div>${locked ? `<div class="notice warning" style="margin-top:10px">Selesaikan ${LevelUpUI.escapeHTML(LevelUpData.challengeById(pre)?.title || 'prasyarat sebelumnya')} terlebih dahulu.</div>` : `<a class="btn ${done ? 'btn-secondary' : 'btn-primary'} btn-sm" style="margin-top:12px" href="challenge-detail.html?id=${c.id}">${done ? 'Lihat Challenge' : active ? 'Lanjutkan' : 'Mulai Tahap'} ↗</a>`}</div></div>`;
+            return `<div class="timeline-item ${done ? 'done' : active ? 'current' : ''}"><div class="timeline-marker">${done ? '✓' : i + 1}</div><div class="timeline-content card" style="padding:15px"><div class="between"><div><span class="eyebrow">STAGE ${String(i + 1).padStart(2, '0')} · ${LevelUpUI.escapeHTML(stageTitle)}</span><h3>${LevelUpUI.escapeHTML(c.title)}</h3></div>${LevelUpUI.statusBadge(done ? 'completed' : locked ? 'locked' : active ? 'in-progress' : 'active')}</div><p>${LevelUpUI.escapeHTML(c.description)}</p><div class="quick-stats"><span class="badge">${c.duration}</span><span class="badge yellow">${c.xp} XP</span></div>${locked ? `<div class="notice warning" style="margin-top:10px">Complete ${LevelUpUI.escapeHTML(LevelUpData.challengeById(pre)?.title || 'the previous prerequisite')} first.</div>` : `<a class="btn ${done ? 'btn-secondary' : 'btn-primary'} btn-sm" style="margin-top:12px" href="challenge-detail.html?id=${c.id}">${done ? 'View Challenge' : active ? 'Continue' : 'Start Stage'} ↗</a>`}</div></div>`;
         })
         .join('');
 
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .getPaths()
         .filter(p => p.id !== path.id)
         .map(
-            p => `<article class="card path-card"><div class="path-art" style="background:#EAF5FF"><img src="${p.art}" alt=""></div><span class="badge">${p.category}</span><h3>${p.title}</h3><p>${p.description}</p><a class="btn btn-secondary" href="growth-path.html?id=${p.id}">Lihat Path ↗</a></article>`
+            p => `<article class="card path-card"><div class="path-art" style="background:#EAF5FF"><img src="${p.art}" alt=""></div><span class="badge">${p.category}</span><h3>${p.title}</h3><p>${p.description}</p><a class="btn btn-secondary" href="growth-path.html?id=${p.id}">View Path ↗</a></article>`
         )
         .join('');
 });

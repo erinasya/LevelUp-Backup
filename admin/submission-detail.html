@@ -1,6 +1,6 @@
 ```html
 <!doctype html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
             <header
                 class="topbar"
                 id="site-header"
-                aria-label="Navigasi LevelUp"
+                aria-label="LevelUp navigation"
             ></header>
 
             <aside
@@ -33,12 +33,12 @@
                         <span class="eyebrow">SUBMISSION REVIEW</span>
                         <h1>Review Detail</h1>
                         <p>
-                            Periksa bukti berdasarkan kriteria challenge dan catat alasan keputusan.
+                            Review proof against the challenge criteria and record the reason for your decision.
                         </p>
                     </div>
 
                     <a href="submissions.html" class="btn btn-ghost">
-                        ← Kembali ke Queue
+                        ← Back to Queue
                     </a>
                 </div>
 
@@ -52,7 +52,7 @@
                             <div class="between">
                                 <div>
                                     <h2 id="review-challenge-title">Challenge</h2>
-                                    <p id="review-user-meta">Dikirim oleh user</p>
+                                    <p id="review-user-meta">Submitted by user</p>
                                 </div>
 
                                 <span id="review-status-badge" class="badge yellow">
@@ -73,16 +73,16 @@
 
                             <div class="divider"></div>
 
-                            <h3>Refleksi pengguna</h3>
-                            <p id="review-reflection">Belum ada refleksi.</p>
+                            <h3>User reflection</h3>
+                            <p id="review-reflection">No reflection provided.</p>
 
-                            <h3>Catatan tambahan</h3>
+                            <h3>Additional notes</h3>
                             <p id="review-extra">—</p>
                         </article>
 
                         <article class="card">
                             <span class="eyebrow">REQUIREMENTS</span>
-                            <h2>Kriteria challenge</h2>
+                            <h2>Challenge criteria</h2>
 
                             <div id="review-criteria" class="criteria-list"></div>
 
@@ -96,28 +96,28 @@
                     <aside class="flow">
                         <form id="admin-review-form" class="card">
                             <span class="eyebrow">REVIEW DECISION</span>
-                            <h2>Catat keputusan</h2>
+                            <h2>Record decision</h2>
 
                             <div class="notice warning">
-                                Indikator otomatis hanyalah sinyal untuk pemeriksaan, bukan keputusan pelanggaran final.
+                                Automated indicators are only signals for review, not a final violation decision.
                             </div>
 
                             <div class="field" style="margin-top: 16px">
-                                <label for="review-reason">Alasan / feedback</label>
+                                <label for="review-reason">Reason / feedback</label>
                                 <textarea
                                     id="review-reason"
-                                    placeholder="Tuliskan alasan yang spesifik dan dapat ditindaklanjuti..."
+                                    placeholder="Write a specific, actionable reason..."
                                 ></textarea>
                             </div>
 
                             <div class="field" style="margin-top: 13px">
-                                <label for="review-decision">Keputusan</label>
+                                <label for="review-decision">Decision</label>
                                 <select id="review-decision">
                                     <option value="approved">
-                                        Approve — memenuhi kriteria
+                                        Approve — meets criteria
                                     </option>
                                     <option value="rejected">
-                                        Reject — perlu perbaikan
+                                        Reject — revision needed
                                     </option>
                                 </select>
                             </div>
@@ -127,7 +127,7 @@
                                 type="submit"
                                 style="margin-top: 17px"
                             >
-                                Simpan Keputusan
+                                Save Decision
                             </button>
                         </form>
 

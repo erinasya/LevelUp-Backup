@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         message.classList.add('hidden');
 
         if (!email.value.trim() || !password.value) {
-            showMessage('Isi email dan password terlebih dahulu.');
+            showMessage('Enter your email and password first.');
             return;
         }
 

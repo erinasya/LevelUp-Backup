@@ -21,7 +21,7 @@
             } catch (e) {
                 console.error('LocalStorage write failed:', key, e);
                 window.LevelUpUI?.toast(
-                    'Penyimpanan browser penuh atau tidak tersedia.',
+                    'Browser storage is full or unavailable.',
                     'error'
                 );
                 return false;

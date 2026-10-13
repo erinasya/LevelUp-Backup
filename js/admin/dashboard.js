@@ -38,14 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 </tr>
             `;
         })
-        .join('') || '<tr><td colspan="4">Tidak ada submission yang menunggu pemeriksaan.</td></tr>';
+        .join('') || '<tr><td colspan="4">No submissions are waiting for review.</td></tr>';
 
     const draft = cs.filter(c => c.status === 'draft').length,
         active = cs.filter(c => c.status === 'active').length,
         arch = cs.filter(c => c.status === 'archived').length;
 
     document.getElementById('admin-content-stats').innerHTML = [
-        ['Aktif', active, '#47B5A8'],
+        ['Active', active, '#47B5A8'],
         ['Draft', draft, '#F7E289'],
         ['Archived', arch, '#A3C1E2']
     ]
@@ -79,5 +79,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         })
-        .join('') || '<p class="muted small">Belum ada keputusan review dalam sesi demo ini.</p>';
+        .join('') || '<p class="muted small">No review decisions have been made in this demo session.</p>';
 });

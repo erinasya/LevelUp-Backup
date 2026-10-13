@@ -1,6 +1,6 @@
 ```html
 <!doctype html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
             <header
                 class="topbar"
                 id="site-header"
-                aria-label="Navigasi LevelUp"
+                aria-label="LevelUp navigation"
             ></header>
 
             <aside
@@ -31,14 +31,14 @@
                 <div class="page-heading">
                     <div>
                         <span class="eyebrow">PATH DESIGNER</span>
-                        <h1 id="path-builder-title">Buat Growth Path</h1>
+                        <h1 id="path-builder-title">Create Growth Path</h1>
                         <p>
-                            Susun tahapan yang masuk akal dan pastikan setiap stage memiliki challenge serta kriteria.
+                            Arrange sensible stages and make sure each stage has a challenge and criteria.
                         </p>
                     </div>
 
                     <a href="growth-paths.html" class="btn btn-ghost">
-                        ← Kembali
+                        ← Back
                     </a>
                 </div>
 
@@ -46,16 +46,16 @@
                     <section class="form-section">
                         <div class="form-grid">
                             <div class="field">
-                                <label for="path-name">Nama Growth Path *</label>
+                                <label for="path-name">Growth Path name *</label>
                                 <input
                                     id="path-name"
                                     required
-                                    placeholder="Contoh: Writing Journey"
+                                    placeholder="Example: Writing Journey"
                                 >
                             </div>
 
                             <div class="field">
-                                <label for="path-category-select">Kategori</label>
+                                <label for="path-category-select">Category</label>
                                 <select id="path-category-select">
                                     <option value="learning">Learning & Focus</option>
                                     <option value="creative">Creative & Digital Skills</option>
@@ -64,7 +64,7 @@
                             </div>
 
                             <div class="field field-full">
-                                <label for="path-description-input">Deskripsi *</label>
+                                <label for="path-description-input">Description *</label>
                                 <textarea
                                     id="path-description-input"
                                     required
@@ -72,15 +72,15 @@
                             </div>
 
                             <div class="field field-full">
-                                <label for="path-goal-input">Tujuan akhir</label>
+                                <label for="path-goal-input">End goal</label>
                                 <textarea id="path-goal-input"></textarea>
                             </div>
 
                             <div class="field">
-                                <label for="path-duration-input">Estimasi durasi</label>
+                                <label for="path-duration-input">Estimated duration</label>
                                 <input
                                     id="path-duration-input"
-                                    value="14 hari"
+                                    value="14 days"
                                 >
                             </div>
 
@@ -88,7 +88,7 @@
                                 <label for="path-status-input">Status</label>
                                 <select id="path-status-input">
                                     <option value="draft">Draft</option>
-                                    <option value="active">Aktif</option>
+                                    <option value="active">Active</option>
                                 </select>
                             </div>
                         </div>
@@ -98,8 +98,8 @@
                         <div class="section-head">
                             <div>
                                 <span class="eyebrow">STAGE SEQUENCE</span>
-                                <h2>Susun tahapan</h2>
-                                <p>Urutan stage menentukan perjalanan user.</p>
+                                <h2>Arrange stages</h2>
+                                <p>Stage order determines the user's journey.</p>
                             </div>
 
                             <button
@@ -107,7 +107,7 @@
                                 type="button"
                                 id="add-path-stage"
                             >
-                                + Tambah Tahap
+                                + Add Stage
                             </button>
                         </div>
 
@@ -116,12 +116,12 @@
 
                     <section class="form-section">
                         <div class="notice warning">
-                            Periksa urutan, challenge yang terhubung, prasyarat, dan kriteria penyelesaian sebelum mengaktifkan jalur.
+                            Review the order, linked challenges, prerequisites, and completion criteria before activating the path.
                         </div>
 
                         <div class="between" style="margin-top: 16px">
                             <a href="growth-paths.html" class="btn btn-ghost">
-                                Batal
+                                Cancel
                             </a>
 
                             <div class="heading-actions">
@@ -130,14 +130,14 @@
                                     type="button"
                                     id="save-path-draft"
                                 >
-                                    Simpan Draft
+                                    Save Draft
                                 </button>
 
                                 <button
                                     class="btn btn-primary"
                                     type="submit"
                                 >
-                                    Simpan Growth Path ↗
+                                    Save Growth Path ↗
                                 </button>
                             </div>
                         </div>

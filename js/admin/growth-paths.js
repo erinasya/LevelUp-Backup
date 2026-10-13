@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>${LevelUpUI.escapeHTML(p.description)}</p>
 
                     <div class="quick-stats">
-                        <span class="badge">${p.challengeIds.length} stage/challenge</span>
+                        <span class="badge">${p.challengeIds.length} stages/challenges</span>
                         <span class="badge yellow">${LevelUpUI.escapeHTML(p.duration)}</span>
                     </div>
 
@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </article>
             `)
             .join('') || LevelUpUI.emptyState(
-                'Belum ada Growth Path',
-                'Buat perjalanan perkembangan pertama.',
-                '<a class="btn btn-primary" href="growth-path-builder.html">Buat Growth Path</a>'
+                'No Growth Paths yet',
+                'Create your first development journey.',
+                '<a class="btn btn-primary" href="growth-path-builder.html">Create Growth Path</a>'
             );
     }
 

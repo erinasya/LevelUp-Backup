@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const p = LevelUpData.getProfile();
 
     document.getElementById('main-goal-title').textContent =
-        p.goal || user.goal || 'Tentukan tujuanmu';
+        p.goal || user.goal || 'Set your goal';
 
     document.getElementById('main-goal-desc').textContent =
-        `Fokus: ${(p.interests || ['learning'])
+        `Focus: ${(p.interests || ['learning'])
             .map(
                 k =>
                     ({
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         healthy: 'Healthy Habits'
                     }[k] || k)
             )
-            .join(', ')} · ${p.availableTime || 'waktu fleksibel'}`;
+            .join(', ')} · ${p.availableTime || 'flexible time'}`;
 
     const en = LevelUpData.getEnrollments().filter(
         e => e.userId === user.id
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     document.getElementById('plan-path-count').textContent =
-        LevelUpData.getPaths().length + ' jalur tersedia';
+        LevelUpData.getPaths().length + ' paths available';
 
     const paths = LevelUpData.getPaths();
 
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     )
             ).length;
 
-            return `<article class="card path-card"><div class="path-art" style="background:${path.categoryKey === 'learning' ? '#F0E6F6' : path.categoryKey === 'creative' ? '#FFF0E6' : '#E7F2E7'}"><img src="${path.art}" alt=""></div><div class="between"><span class="badge">${path.category}</span><span class="small muted">${items.length} tahap</span></div><h3>${LevelUpUI.escapeHTML(path.title)}</h3><p class="small">${LevelUpUI.escapeHTML(path.description)}</p><div class="progress-meta"><span>${completed}/${items.length} challenge selesai</span><strong>${Math.round(completed / (items.length || 1) * 100)}%</strong></div><div class="progress-track"><div class="progress-fill" style="width:${completed / (items.length || 1) * 100}%"></div></div><a class="btn btn-secondary" href="growth-path.html?id=${path.id}">Lihat Journey ↗</a></article>`;
+            return `<article class="card path-card"><div class="path-art" style="background:${path.categoryKey === 'learning' ? '#F0E6F6' : path.categoryKey === 'creative' ? '#FFF0E6' : '#E7F2E7'}"><img src="${path.art}" alt=""></div><div class="between"><span class="badge">${path.category}</span><span class="small muted">${items.length} stages</span></div><h3>${LevelUpUI.escapeHTML(path.title)}</h3><p class="small">${LevelUpUI.escapeHTML(path.description)}</p><div class="progress-meta"><span>${completed}/${items.length} challenges complete</span><strong>${Math.round(completed / (items.length || 1) * 100)}%</strong></div><div class="progress-track"><div class="progress-fill" style="width:${completed / (items.length || 1) * 100}%"></div></div><a class="btn btn-secondary" href="growth-path.html?id=${path.id}">View Journey ↗</a></article>`;
         })
         .join('');
 
@@ -101,9 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
         .join('');
 
     document.getElementById('growth-plan-completed').innerHTML = done
-        ? `<div class="notice success">Kamu sudah menyelesaikan ${done} challenge. Lanjutkan satu langkah berikutnya saat siap.</div>`
+        ? `<div class="notice success">You have completed ${done} challenges. Continue with the next step when you're ready.</div>`
         : LevelUpUI.emptyState(
-            'Perjalananmu baru dimulai',
-            'Setelah menyelesaikan challenge, ringkasannya akan muncul di sini.'
+            'Your journey is just beginning',
+            'After you complete a challenge, a summary will appear here.'
         );
 });

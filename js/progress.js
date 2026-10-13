@@ -106,11 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     : (x.e?.progress || 0);
 
                 const action = x.status === 'in-progress'
-                    ? `<a class="btn btn-primary btn-sm" href="challenge-session.html?id=${x.c.id}">Lanjutkan</a>`
+                    ? `<a class="btn btn-primary btn-sm" href="challenge-session.html?id=${x.c.id}">Continue</a>`
                     : x.status === 'pending' || x.status === 'needs-review'
-                        ? `<a class="btn btn-secondary btn-sm" href="submission-status.html?id=${x.submission?.id || ''}">Lihat Status</a>`
+                        ? `<a class="btn btn-secondary btn-sm" href="submission-status.html?id=${x.submission?.id || ''}">View Status</a>`
                         : x.status === 'rejected'
-                            ? `<a class="btn btn-secondary btn-sm" href="proof-submission.html?id=${x.c.id}">Perbaiki</a>`
+                            ? `<a class="btn btn-secondary btn-sm" href="proof-submission.html?id=${x.c.id}">Revise</a>`
                             : `<a class="btn btn-secondary btn-sm" href="challenge-detail.html?id=${x.c.id}">Detail</a>`;
 
                 return `<article class="progress-item"><div class="item-icon" style="background:${x.c.categoryKey === 'learning' ? '#F0E6F6' : x.c.categoryKey === 'creative' ? '#FFF0E6' : '#E7F2E7'}">${x.c.icon}</div><div><div class="between"><h3>${LevelUpUI.escapeHTML(x.c.title)}</h3>${LevelUpUI.statusBadge(x.status)}</div><p>${x.c.category} · ${x.c.duration}</p><div class="progress-meta" style="margin-top:8px"><span>Progress</span><strong>${pct}%</strong></div><div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div></div><div class="item-end">${action}</div></article>`;
@@ -121,8 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!items.length) {
             empty.innerHTML = LevelUpUI.emptyState(
-                'Belum ada hasil',
-                'Coba ubah filter atau mulai challenge baru.',
+                'No results yet',
+                'Try changing the filter or start a new challenge.',
                 '<a href="challenges.html" class="btn btn-primary">Explore Challenges</a>'
             );
         }

@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
         empty.classList.remove('hidden');
 
         empty.innerHTML = LevelUpUI.emptyState(
-            'Belum ada submission',
-            'Kirim bukti setelah memenuhi kriteria challenge.',
+            'No submissions yet',
+            'Submit proof after meeting the challenge criteria.',
             '<a class="btn btn-primary" href="progress.html">My Progress</a>'
         );
 
@@ -31,37 +31,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const statusText = {
                 pending: [
-                    'Menunggu pemeriksaan',
-                    'Submission kamu telah tersimpan. Statusnya masih menunggu proses review.',
+                    'Awaiting review',
+                    'Your submission has been saved. It is still waiting for review.',
                     '◷',
                     'warning'
                 ],
                 'needs-review': [
-                    'Perlu pemeriksaan',
-                    'Submission ini memerlukan peninjauan tambahan. Ini bukan keputusan pelanggaran.',
+                    'Needs review',
+                    'This submission needs additional review. This is not a final rule violation decision.',
                     '⌕',
                     'warning'
                 ],
                 approved: [
-                    'Submission disetujui',
-                    'Kriteria submission telah dipenuhi. Lihat achievement atau langkah berikutnya.',
+                    'Submission approved',
+                    'The submission criteria have been met. Check your achievement or next step.',
                     '✓',
                     'success'
                 ],
                 rejected: [
-                    'Submission perlu diperbaiki',
-                    s.reviewReason || 'Periksa kembali kriteria challenge sebelum mengirim ulang.',
+                    'Submission needs revision',
+                    s.reviewReason || 'Review the challenge criteria again before resubmitting.',
                     '↻',
                     'error'
                 ]
             }[s.status] || [
-                'Status belum diketahui',
+                'Status unknown',
                 '',
                 '•',
                 ''
             ];
 
-            return `<article class="card"><div class="submission-status-hero ${statusText[3] === 'success' ? '' : statusText[3] === 'error' ? '' : ''}"><div class="submission-status-icon">${statusText[2]}</div><div style="flex:1"><div class="between"><h2>${c?.title || 'Challenge'}</h2>${LevelUpUI.statusBadge(s.status)}</div><p>${statusText[0]} · Dikirim ${LevelUpUI.formatDate(s.submittedAt)}</p><p class="small mb-0">${statusText[1]}</p></div></div><div class="grid grid-2 section"><div><span class="eyebrow">SUBMITTED FILE</span><p>${LevelUpUI.escapeHTML(s.filename || 'Tidak ada file terlampir')}</p><span class="eyebrow">REFLECTION</span><p>${LevelUpUI.escapeHTML(s.reflection || '—')}</p></div><div><span class="eyebrow">REVIEW FEEDBACK</span><p>${LevelUpUI.escapeHTML(s.reviewReason || 'Belum ada catatan pemeriksaan.')}</p>${s.status === 'approved' ? `<a href="achievements.html" class="btn btn-primary">Lihat Achievement ↗</a>` : ''}${s.status === 'rejected' ? `<a href="proof-submission.html?id=${s.challengeId}" class="btn btn-secondary">Perbaiki Submission ↗</a>` : ''}</div></div></article>`;
+            return `<article class="card"><div class="submission-status-hero ${statusText[3] === 'success' ? '' : statusText[3] === 'error' ? '' : ''}"><div class="submission-status-icon">${statusText[2]}</div><div style="flex:1"><div class="between"><h2>${c?.title || 'Challenge'}</h2>${LevelUpUI.statusBadge(s.status)}</div><p>${statusText[0]} · Submitted ${LevelUpUI.formatDate(s.submittedAt)}</p><p class="small mb-0">${statusText[1]}</p></div></div><div class="grid grid-2 section"><div><span class="eyebrow">SUBMITTED FILE</span><p>${LevelUpUI.escapeHTML(s.filename || 'No file attached')}</p><span class="eyebrow">REFLECTION</span><p>${LevelUpUI.escapeHTML(s.reflection || '—')}</p></div><div><span class="eyebrow">REVIEW FEEDBACK</span><p>${LevelUpUI.escapeHTML(s.reviewReason || 'No review notes yet.')}</p>${s.status === 'approved' ? `<a href="achievements.html" class="btn btn-primary">View Achievement ↗</a>` : ''}${s.status === 'rejected' ? `<a href="proof-submission.html?id=${s.challengeId}" class="btn btn-secondary">Revise Submission ↗</a>` : ''}</div></div></article>`;
         })
         .join('');
 });

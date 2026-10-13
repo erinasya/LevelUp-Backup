@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('session-subtitle').textContent = c.description;
     document.getElementById('session-progress-title').textContent = c.title;
     document.getElementById('session-step-title').textContent =
-        c.tasks[0] || 'Selesaikan aktivitas';
+        c.tasks[0] || 'Complete the activity';
     document.getElementById('session-step-desc').textContent =
         c.objective || c.description;
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let completed = new Set(en.completedTasks || []);
 
     taskRoot.innerHTML = c.tasks
-        .map((task, i) => `<label class="task-check ${completed.has(i) ? 'done' : ''}"><input type="checkbox" data-task-index="${i}" ${completed.has(i) ? 'checked' : ''}><span>${LevelUpUI.escapeHTML(task)}<small>Tugas ${i + 1} dari ${c.tasks.length}</small></span></label>`)
+        .map((task, i) => `<label class="task-check ${completed.has(i) ? 'done' : ''}"><input type="checkbox" data-task-index="${i}" ${completed.has(i) ? 'checked' : ''}><span>${LevelUpUI.escapeHTML(task)}<small>Task ${i + 1} of ${c.tasks.length}</small></span></label>`)
         .join('');
 
     const noteInput = document.getElementById('session-note');
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (remaining === 0) {
                 pause();
                 LevelUpUI.toast(
-                    'Waktu sesi berakhir. Catat hasilmu sebelum melanjutkan.'
+                    'The session time is up. Record your result before continuing.'
                 );
             }
         }, 1000);
@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('session-progress-copy').textContent =
             pct === 100
-                ? 'Semua task selesai. Kamu dapat menyiapkan submission.'
-                : `Selesaikan ${c.tasks.length - completed.size} tugas lagi untuk menuntaskan checklist.`;
+                ? 'All tasks completed. You can prepare your submission.'
+                : `Complete ${c.tasks.length - completed.size} more tasks to finish the checklist.`;
 
         document.getElementById('go-submit').classList.toggle(
             'disabled',
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         LS.set('sessionNotes', notes);
 
-        LevelUpUI.toast('Progress sesi disimpan.');
+        LevelUpUI.toast('Session progress saved.');
         refresh();
     });
 
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             LevelUpUI.toast(
-                'Selesaikan checklist dulu sebelum submission.',
+                'Finish the checklist before submitting.',
                 'error'
             );
 

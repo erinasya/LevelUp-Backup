@@ -96,14 +96,14 @@
             <button
                 class="icon-button mobile-menu"
                 id="mobile-menu"
-                aria-label="Buka navigasi"
+                aria-label="Open navigation"
                 type="button"
             >☰</button>
 
             <nav
                 class="topnav"
                 id="topnav"
-                aria-label="Navigasi utama"
+                aria-label="Main navigation"
             >
                 ${nav.map(([href, label]) => `
                     <a
@@ -121,8 +121,8 @@
                 <button
                     class="icon-button"
                     id="top-search"
-                    title="Cari challenge"
-                    aria-label="Cari challenge"
+                    title="Search challenges"
+                    aria-label="Search challenges"
                     type="button"
                 >⌕</button>
 
@@ -132,15 +132,15 @@
                 >
                  <img
                 src="${root()}assets/images/avatars/karina.jpg"
-                alt="Foto profil Karina"
+                alt="Karina's profile photo"
                 >
             </div>
 
                 <button
                     class="icon-button"
                     data-logout
-                    aria-label="Keluar"
-                    title="Keluar"
+                    aria-label="Sign out"
+                    title="Sign out"
                     type="button"
                 >↪</button>
             </div>
@@ -177,7 +177,7 @@
                     © ${new Date().getFullYear()} LevelUp · Grow with Purpose. Progress with Proof.
                 </span>
                 <span>
-                    Frontend demo · Data tersimpan di browser
+                    Frontend demo · Data is stored in your browser
                 </span>
             `;
         }
@@ -253,10 +253,10 @@
                 : 'green';
 
         const actionLabel = locked
-            ? 'Lihat Syarat'
+            ? 'View Requirements'
             : enrollment
-                ? 'Lanjutkan'
-                : 'Lihat Detail';
+                ? 'Continue'
+                : 'View Details';
 
         return `
             <article class="card challenge-card">
@@ -302,7 +302,7 @@
 
                     ${locked ? `
                         <div class="notice warning">
-                            Selesaikan prasyarat untuk membuka challenge ini.
+                            Complete the prerequisite to unlock this challenge.
                         </div>
                     ` : ''}
 
@@ -333,7 +333,7 @@
         if (!date) return '—';
 
         try {
-            return new Intl.DateTimeFormat('id-ID', {
+            return new Intl.DateTimeFormat('en-US', {
                 day: 'numeric',
                 month: 'short',
                 year: 'numeric'
@@ -349,10 +349,10 @@
             'needs-review': ['Needs Review', 'peach'],
             'approved': ['Approved', 'green'],
             'rejected': ['Rejected', 'red'],
-            'in-progress': ['Sedang Berjalan', 'teal'],
-            'completed': ['Selesai', 'green'],
+            'in-progress': ['In Progress', 'teal'],
+            'completed': ['Completed', 'green'],
             'locked': ['Locked', 'gray'],
-            'active': ['Aktif', 'teal'],
+            'active': ['Active', 'teal'],
             'draft': ['Draft', 'yellow'],
             'archived': ['Archived', 'gray']
         };

@@ -6,17 +6,17 @@
             category: 'Learning & Focus',
             categoryKey: 'learning',
             difficulty: 'Beginner',
-            duration: '7 hari',
+            duration: '7 days',
             durationDays: 7,
             minutes: 20,
-            description: 'Bangun rutinitas membaca melalui sesi singkat yang konsisten.',
-            objective: 'Membangun kebiasaan membaca dan mencatat pemahaman dasar.',
+            description: 'Build a reading habit through short, consistent sessions.',
+            objective: 'Build a reading habit and record your basic understanding.',
             tasks: [
-                'Baca selama minimal 20 menit',
-                'Catat halaman awal dan akhir',
-                'Tulis satu hal yang dipelajari'
+                'Read for at least 20 minutes',
+                'Note the first and last page',
+                'Write down one thing you learned'
             ],
-            criteria: 'Selesaikan minimal 5 dari 7 sesi dan isi refleksi akhir.',
+            criteria: 'Complete at least 5 of 7 sessions and fill in the final reflection.',
             proofType: 'Session log + reflection',
             verification: 'System-checked',
             xp: 80,
@@ -34,17 +34,17 @@
             category: 'Learning & Focus',
             categoryKey: 'learning',
             difficulty: 'Beginner',
-            duration: '3 hari',
+            duration: '3 days',
             durationDays: 3,
             minutes: 15,
-            description: 'Latih pemahaman dengan ringkasan pendek dari bacaan.',
-            objective: 'Menyampaikan gagasan utama dengan kata-kata sendiri.',
+            description: 'Practice understanding with a short summary of the reading.',
+            objective: 'Express the main idea in your own words.',
             tasks: [
-                'Pilih satu bacaan',
-                'Tulis ringkasan 100–150 kata',
-                'Tuliskan satu pertanyaan kritis'
+                'Choose one reading',
+                'Write a 100–150 word summary',
+                'Write one critical question'
             ],
-            criteria: 'Ringkasan memuat gagasan utama dan refleksi pribadi.',
+            criteria: 'The summary includes the main idea and personal reflection.',
             proofType: 'Written reflection',
             verification: 'Assessor review',
             xp: 100,
@@ -62,18 +62,18 @@
             category: 'Learning & Focus',
             categoryKey: 'learning',
             difficulty: 'Intermediate',
-            duration: '5 hari',
+            duration: '5 days',
             durationDays: 5,
             minutes: 25,
-            description: 'Belajar mengevaluasi argumen dan membangun sudut pandang.',
-            objective: 'Melatih analisis informasi dan argumentasi.',
+            description: 'Learn to evaluate arguments and build your own perspective.',
+            objective: 'Practice analyzing information and making arguments.',
             tasks: [
-                'Pilih artikel',
-                'Tentukan klaim utama',
-                'Catat dua bukti pendukung',
-                'Tulis kesimpulan'
+                'Choose an article',
+                'Identify the main claim',
+                'Record two supporting pieces of evidence',
+                'Write a conclusion'
             ],
-            criteria: 'Analisis memiliki klaim, bukti, dan kesimpulan yang saling terhubung.',
+            criteria: 'The analysis includes a claim, evidence, and a logically connected conclusion.',
             proofType: 'Analysis document',
             verification: 'Assessor review',
             xp: 150,
@@ -91,17 +91,17 @@
             category: 'Creative & Digital Skills',
             categoryKey: 'creative',
             difficulty: 'Beginner',
-            duration: '3 hari',
+            duration: '3 days',
             durationDays: 3,
             minutes: 15,
-            description: 'Latih mata kreatif dengan mengamati bentuk, warna, dan komposisi.',
-            objective: 'Meningkatkan kemampuan mengamati visual.',
+            description: 'Train your creative eye to observe shape, color, and composition.',
+            objective: 'Improve your visual observation skills.',
             tasks: [
-                'Pilih objek sederhana',
-                'Ambil atau buat referensi',
-                'Catat tiga hal yang diamati'
+                'Choose a simple object',
+                'Capture or create a reference',
+                'Note three things you observed'
             ],
-            criteria: 'Catatan menyertakan tiga observasi yang spesifik.',
+            criteria: 'Your notes include three specific observations.',
             proofType: 'Image + notes',
             verification: 'System-checked',
             xp: 70,
@@ -119,18 +119,18 @@
             category: 'Creative & Digital Skills',
             categoryKey: 'creative',
             difficulty: 'Beginner',
-            duration: '4 hari',
+            duration: '4 days',
             durationDays: 4,
             minutes: 25,
-            description: 'Buat karya visual sederhana dengan komposisi yang disengaja.',
-            objective: 'Menerapkan hierarki visual dan komposisi dasar.',
+            description: 'Create a simple visual work with deliberate composition.',
+            objective: 'Apply visual hierarchy and basic composition.',
             tasks: [
-                'Pilih brief',
-                'Buat sketsa',
-                'Tentukan focal point',
-                'Unggah hasil akhir'
+                'Choose a brief',
+                'Create a sketch',
+                'Define the focal point',
+                'Upload the final result'
             ],
-            criteria: 'Karya sesuai brief dan memiliki focal point yang jelas.',
+            criteria: 'The work matches the brief and has a clear focal point.',
             proofType: 'Work artifact',
             verification: 'Assessor review',
             xp: 120,
@@ -148,18 +148,18 @@
             category: 'Creative & Digital Skills',
             categoryKey: 'creative',
             difficulty: 'Intermediate',
-            duration: '7 hari',
+            duration: '7 days',
             durationDays: 7,
             minutes: 40,
-            description: 'Selesaikan mini brief desain dari konsep hingga hasil akhir.',
-            objective: 'Mengembangkan proses pemecahan masalah desain.',
+            description: 'Complete a mini design brief from concept to final result.',
+            objective: 'Develop a design problem-solving process.',
             tasks: [
-                'Pahami brief',
-                'Buat dua ide',
-                'Pilih dan kembangkan satu ide',
-                'Unggah hasil dan alasan desain'
+                'Understand the brief',
+                'Create two ideas',
+                'Choose and develop one idea',
+                'Upload the result and design rationale'
             ],
-            criteria: 'Hasil akhir menjawab brief dan disertai alasan keputusan desain.',
+            criteria: 'The final result answers the brief and includes a rationale for the design decision.',
             proofType: 'Design artifact + rationale',
             verification: 'Assessor review',
             xp: 180,
@@ -177,17 +177,17 @@
             category: 'Healthy Habits',
             categoryKey: 'healthy',
             difficulty: 'Beginner',
-            duration: '5 hari',
+            duration: '5 days',
             durationDays: 5,
             minutes: 10,
-            description: 'Bangun rutinitas pagi yang realistis dan sesuai kebutuhanmu.',
-            objective: 'Mengenali pola pagi yang membantu memulai hari.',
+            description: 'Build a realistic morning routine that fits your needs.',
+            objective: 'Recognize morning patterns that help you start the day well.',
             tasks: [
-                'Pilih satu rutinitas sederhana',
-                'Lakukan sesuai jadwal',
-                'Catat pengalaman singkat'
+                'Choose one simple routine',
+                'Do it on schedule',
+                'Write a short note about the experience'
             ],
-            criteria: 'Catat minimal 4 dari 5 hari dan lakukan refleksi.',
+            criteria: 'Record at least 4 out of 5 days and add a reflection.',
             proofType: 'Daily check-in',
             verification: 'Self-reported + spot check',
             xp: 60,
@@ -205,18 +205,18 @@
             category: 'Creative & Digital Skills',
             categoryKey: 'creative',
             difficulty: 'Beginner',
-            duration: '4 hari',
+            duration: '4 days',
             durationDays: 4,
             minutes: 30,
-            description: 'Pecah masalah sederhana menjadi langkah yang dapat dikerjakan.',
-            objective: 'Melatih logika dan penyusunan solusi.',
+            description: 'Break a simple problem into steps you can work through.',
+            objective: 'Practice logic and structured problem solving.',
             tasks: [
-                'Pilih satu problem',
-                'Tulis input dan output',
-                'Buat langkah penyelesaian',
-                'Uji satu contoh'
+                'Choose one problem',
+                'Write the input and output',
+                'Create a solution flow',
+                'Test one example'
             ],
-            criteria: 'Solusi mempunyai langkah logis dan contoh uji.',
+            criteria: 'The solution has logical steps and an example test.',
             proofType: 'Solution notes',
             verification: 'System-checked + sample review',
             xp: 90,
@@ -234,18 +234,18 @@
             category: 'Creative & Digital Skills',
             categoryKey: 'creative',
             difficulty: 'Intermediate',
-            duration: '7 hari',
+            duration: '7 days',
             durationDays: 7,
             minutes: 45,
-            description: 'Bangun proyek kecil yang menyelesaikan satu kebutuhan.',
-            objective: 'Menggabungkan logika dan implementasi menjadi proyek.',
+            description: 'Build a small project that solves a real need.',
+            objective: 'Combine logic and implementation into a working project.',
             tasks: [
-                'Tentukan kebutuhan',
-                'Buat fitur inti',
-                'Uji hasil',
-                'Dokumentasikan penggunaan'
+                'Define the need',
+                'Build the core feature',
+                'Test the result',
+                'Document the usage'
             ],
-            criteria: 'Proyek berjalan untuk skenario utama dan memiliki dokumentasi singkat.',
+            criteria: 'The project works for the main scenario and includes brief documentation.',
             proofType: 'Project files or repository',
             verification: 'Assessor review',
             xp: 200,
@@ -265,9 +265,9 @@
             title: 'Reading & Critical Thinking',
             category: 'Learning & Focus',
             categoryKey: 'learning',
-            description: 'Bangun rutinitas membaca, pahami gagasan, lalu latih cara berpikir kritis.',
-            goal: 'Mengubah kegiatan membaca menjadi pemahaman dan refleksi.',
-            duration: '15 hari',
+            description: 'Build a reading routine, understand ideas, and practice critical thinking.',
+            goal: 'Turn reading into understanding and reflection.',
+            duration: '15 days',
             level: 'Beginner → Intermediate',
             icon: '📚',
             art: 'assets/images/illustrations/reading.svg',
@@ -283,9 +283,9 @@
             title: 'Creative Design Journey',
             category: 'Creative & Digital Skills',
             categoryKey: 'creative',
-            description: 'Latih observasi visual, komposisi, dan penyelesaian brief desain sederhana.',
-            goal: 'Membangun proses kreatif dari observasi menjadi karya.',
-            duration: '14 hari',
+            description: 'Practice visual observation, composition, and simple design brief execution.',
+            goal: 'Build a creative process from observation to finished work.',
+            duration: '14 days',
             level: 'Beginner → Intermediate',
             icon: '🎨',
             art: 'assets/images/illustrations/creative.svg',
@@ -301,9 +301,9 @@
             title: 'Healthy Habit Starter',
             category: 'Healthy Habits',
             categoryKey: 'healthy',
-            description: 'Rancang rutinitas kecil yang realistis dan refleksikan apa yang cocok untukmu.',
-            goal: 'Membangun kebiasaan tanpa tekanan streak berlebihan.',
-            duration: '5 hari',
+            description: 'Design a small, realistic routine and reflect on what works for you.',
+            goal: 'Build a habit without excessive streak pressure.',
+            duration: '5 days',
             level: 'Beginner',
             icon: '🌿',
             art: 'assets/images/illustrations/healthy.svg',
@@ -317,9 +317,9 @@
             title: 'Programming Foundation',
             category: 'Creative & Digital Skills',
             categoryKey: 'creative',
-            description: 'Pahami problem solving lalu terapkan dalam mini project.',
-            goal: 'Melangkah dari logika dasar ke proyek kecil yang bekerja.',
-            duration: '11 hari',
+            description: 'Understand problem solving and apply it in a mini project.',
+            goal: 'Move from basic logic to a small working project.',
+            duration: '11 days',
             level: 'Beginner → Intermediate',
             icon: '💻',
             art: 'assets/images/illustrations/creative.svg',
@@ -335,50 +335,50 @@
         {
             id: 'first-step',
             title: 'First Step',
-            description: 'Menyelesaikan challenge pertamamu.',
+            description: 'Complete your first challenge.',
             icon: '🌟',
             art: 'assets/images/achievements/consistency.svg',
-            criteria: 'Selesaikan 1 challenge yang memenuhi kriteria.',
+            criteria: 'Complete 1 challenge that meets the criteria.',
             xp: 30,
             unlock: null
         },
         {
             id: 'book-explorer',
             title: 'Book Explorer',
-            description: 'Menuntaskan tahap awal Reading Path.',
+            description: 'Complete the first stage of the Reading Path.',
             icon: '📖',
             art: 'assets/images/achievements/reading.svg',
-            criteria: 'Selesaikan Reading Habit.',
+            criteria: 'Complete Reading Habit.',
             xp: 50,
             unlock: 'reading-02'
         },
         {
             id: 'creative-mind',
             title: 'Creative Mind',
-            description: 'Menyelesaikan tantangan kreatif pertama.',
+            description: 'Complete your first creative challenge.',
             icon: '🎨',
             art: 'assets/images/achievements/creativity.svg',
-            criteria: 'Selesaikan Visual Observation.',
+            criteria: 'Complete Visual Observation.',
             xp: 40,
             unlock: 'creative-02'
         },
         {
             id: 'steady-steps',
             title: 'Steady Steps',
-            description: 'Menjaga ritme aktivitas dari waktu ke waktu.',
+            description: 'Maintain your activity rhythm over time.',
             icon: '🌱',
             art: 'assets/images/achievements/consistency.svg',
-            criteria: 'Mencatat lima sesi valid.',
+            criteria: 'Record five valid sessions.',
             xp: 40,
             unlock: null
         },
         {
             id: 'deep-thinker',
             title: 'Deep Thinker',
-            description: 'Menyelesaikan challenge analisis.',
+            description: 'Complete the analysis challenge.',
             icon: '🧠',
             art: 'assets/images/achievements/focus.svg',
-            criteria: 'Selesaikan Critical Thinking.',
+            criteria: 'Complete Critical Thinking.',
             xp: 80,
             unlock: null
         }
@@ -391,9 +391,9 @@
             email: 'user@levelup.id',
             password: 'user123',
             role: 'user',
-            goal: 'Membangun kebiasaan belajar dan berpikir kritis',
+            goal: 'Build a habit of learning and critical thinking',
             interests: ['learning'],
-            availableTime: '20–30 menit per hari',
+            availableTime: '20–30 minutes per day',
             avatar: 'assets/images/avatars/karina.jpg'
         },
         {
@@ -442,7 +442,7 @@
                     userId: 'user-demo',
                     challengeId: 'reading-02',
                     filename: 'reading-reflection.pdf',
-                    reflection: 'Saya belajar merangkum ide utama dari bacaan.',
+                    reflection: 'I learned how to summarize the main ideas from the reading.',
                     status: 'pending',
                     submittedAt: new Date(Date.now() - 3600000 * 5).toISOString(),
                     reviewReason: '',
@@ -453,10 +453,10 @@
                     userId: 'user-demo',
                     challengeId: 'creative-02',
                     filename: 'composition-study.png',
-                    reflection: 'Mencoba mengatur focal point pada komposisi.',
+                    reflection: 'I tried to position the focal point in the composition.',
                     status: 'needs-review',
                     submittedAt: new Date(Date.now() - 86400000).toISOString(),
-                    reviewReason: 'Perlu peninjauan tambahan pada hasil karya.',
+                    reviewReason: 'Needs additional review for the work produced.',
                     risk: 'attention'
                 }
             ]);
@@ -514,6 +514,128 @@
     };
 
     seed();
+
+    function migrateCatalogText(key, defaults, fields) {
+        const records = LS.get(key, []);
+        if (!Array.isArray(records)) return false;
+
+        const defaultsById = new Map(defaults.map(record => [record.id, record]));
+        let changed = false;
+
+        const migrated = records.map(record => {
+            const translated = defaultsById.get(record.id);
+            if (!translated) return record;
+
+            const updates = {};
+            fields.forEach(field => {
+                if (Object.prototype.hasOwnProperty.call(translated, field)) {
+                    updates[field] = translated[field];
+                }
+            });
+
+            if (!Object.keys(updates).length) return record;
+            changed = true;
+            return { ...record, ...updates };
+        });
+
+        return !changed || LS.set(key, migrated);
+    }
+
+    function migrateLegacyText(key, translations) {
+        const records = LS.get(key, null);
+
+        function translateRecord(record) {
+            if (!record || typeof record !== 'object' || Array.isArray(record)) {
+                return { value: record, changed: false };
+            }
+
+            const fields = translations[record.id];
+            if (!fields) return { value: record, changed: false };
+
+            const updates = {};
+            Object.entries(fields).forEach(([field, values]) => {
+                if (Object.prototype.hasOwnProperty.call(values, record[field])) {
+                    updates[field] = values[record[field]];
+                }
+            });
+
+            return {
+                value: Object.keys(updates).length ? { ...record, ...updates } : record,
+                changed: Object.keys(updates).length > 0
+            };
+        }
+
+        if (Array.isArray(records)) {
+            let changed = false;
+            const migrated = records.map(record => {
+                const result = translateRecord(record);
+                changed = changed || result.changed;
+                return result.value;
+            });
+            return !changed || LS.set(key, migrated);
+        }
+
+        const result = translateRecord(records);
+        return !result.changed || LS.set(key, result.value);
+    }
+
+    if (!LS.get('englishCatalogMigrationV1', false)) {
+        const goalTranslations = {
+            'Membangun kebiasaan belajar dan berpikir kritis': 'Build a habit of learning and critical thinking',
+            'Membangun kebiasaan membaca': 'Build a reading habit',
+            'Meningkatkan kemampuan kreatif': 'Improve creative ability',
+            'Belajar skill digital': 'Learn digital skills',
+            'Membangun rutinitas sehat': 'Build a healthy routine'
+        };
+        const timeTranslations = {
+            '10–15 menit per hari': '10–15 minutes per day',
+            '20–30 menit per hari': '20–30 minutes per day',
+            'Beberapa sesi per minggu': 'Several sessions per week'
+        };
+
+        const migrationSucceeded =
+            migrateCatalogText('challenges', challenges, [
+                'title', 'category', 'difficulty', 'duration', 'description',
+                'objective', 'tasks', 'criteria', 'proofType', 'verification'
+            ]) &&
+            migrateCatalogText('paths', paths, [
+                'title', 'category', 'description', 'goal', 'duration', 'level'
+            ]) &&
+            migrateCatalogText('achievements', achievements, [
+                'title', 'description', 'criteria'
+            ]) &&
+            migrateLegacyText('users', {
+                'user-demo': {
+                    goal: goalTranslations,
+                    availableTime: timeTranslations
+                }
+            }) &&
+            migrateLegacyText('profile', {
+                'user-demo': {
+                    goal: goalTranslations,
+                    availableTime: timeTranslations
+                }
+            }) &&
+            migrateLegacyText('submissions', {
+                'sub-demo-1': {
+                    reflection: {
+                        'Saya belajar merangkum ide utama dari bacaan.': 'I learned how to summarize the main ideas from the reading.'
+                    }
+                },
+                'sub-demo-2': {
+                    reflection: {
+                        'Mencoba mengatur focal point pada komposisi.': 'I tried to position the focal point in the composition.'
+                    },
+                    reviewReason: {
+                        'Perlu peninjauan tambahan pada hasil karya.': 'Needs additional review for the work produced.'
+                    }
+                }
+            });
+
+        if (migrationSucceeded) {
+            LS.set('englishCatalogMigrationV1', true);
+        }
+    }
 
     const updatedUsers = LS.get('users', []).map(user =>
     user.id === 'user-demo'

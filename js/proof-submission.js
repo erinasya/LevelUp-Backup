@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!latest || latest.progress < 100) {
             LevelUpUI.toast(
-                'Selesaikan semua tugas di sesi challenge sebelum mengirim.',
+                'Complete all tasks in the challenge session before submitting.',
                 'error'
             );
             return;
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (reflection.length < 10) {
             LevelUpUI.toast(
-                'Tambahkan refleksi minimal 10 karakter.',
+                'Add a reflection of at least 10 characters.',
                 'error'
             );
             return;
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             LevelUpData.setSubmissions(arr);
         }
 
-        LevelUpUI.toast('Submission demo berhasil dikirim.');
+        LevelUpUI.toast('Demo submission sent successfully.');
 
         setTimeout(
             () => location.href = `submission-status.html?id=${sub.id}`,

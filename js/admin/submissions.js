@@ -82,9 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!list.length) {
             empty.innerHTML = LevelUpUI.emptyState(
-                'Tidak ada submission',
-                'Tidak ada data yang cocok dengan filter ini.',
-                '<button class="btn btn-secondary" id="reset-queue">Reset Filter</button>'
+                'No submissions found',
+                'No records match these filters.',
+                '<button class="btn btn-secondary" id="reset-queue">Reset Filters</button>'
             );
         }
 

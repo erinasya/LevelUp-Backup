@@ -9,45 +9,45 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 'guide-reading',
             title: 'Reading Reflection Guide',
-            desc: 'Panduan singkat untuk membuat ringkasan dan refleksi bacaan.',
+            desc: 'A quick guide to writing a reading summary and reflection.',
             icon: '📘',
             category: 'learning',
-            condition: 'Tersedia sebagai materi demo.',
+            condition: 'Available as demo material.',
             available: true,
-            action: 'Buka Panduan',
+            action: 'Open Guide',
             href: 'growth-path.html?id=reading-path'
         },
         {
             id: 'creative-brief',
             title: 'Creative Practice Pack',
-            desc: 'Kumpulan brief latihan untuk mengembangkan proses kreatif.',
+            desc: 'A set of practice briefs to develop your creative process.',
             icon: '🎨',
             category: 'creative',
-            condition: 'Selesaikan Creative Mind.',
+            condition: 'Complete Creative Mind.',
             available: earnedIds.includes('creative-mind'),
-            action: 'Lihat Creative Path',
+            action: 'View Creative Path',
             href: 'growth-path.html?id=creative-path'
         },
         {
             id: 'critical-path',
             title: 'Critical Thinking Path',
-            desc: 'Lanjutkan latihan membaca dan evaluasi argumen.',
+            desc: 'Continue practicing reading and evaluating arguments.',
             icon: '🧠',
             category: 'learning',
-            condition: 'Selesaikan tahap Reading Reflection.',
+            condition: 'Complete the Reading Reflection stage.',
             available: earnedIds.includes('book-explorer'),
-            action: 'Buka Path',
+            action: 'Open Path',
             href: 'growth-path.html?id=reading-path'
         },
         {
             id: 'focus-planner',
             title: 'Weekly Focus Planner',
-            desc: 'Template untuk merencanakan sesi belajar dan review mingguan.',
+            desc: 'A template for planning weekly study and review sessions.',
             icon: '🗓️',
             category: 'learning',
-            condition: 'Tersedia sebagai materi demo.',
+            condition: 'Available as demo material.',
             available: true,
-            action: 'Lihat Growth Plan',
+            action: 'View Growth Plan',
             href: 'growth-plan.html'
         }
     ];
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         grid.innerHTML = list
             .map(
-                b => `<article class="card benefit-card ${b.available ? '' : 'locked'}"><div class="reward-symbol" style="font-size:32px">${b.icon}</div><span class="badge ${b.available ? 'green' : 'gray'}">${b.available ? 'Tersedia' : 'Terkunci'}</span><h3>${b.title}</h3><p>${b.desc}</p><div class="benefit-condition">${b.available ? 'Dapat diakses sekarang.' : b.condition}</div><a class="btn ${b.available ? 'btn-primary' : 'btn-secondary'}" href="${b.available ? b.href : 'achievements.html'}">${b.available ? b.action : 'Lihat Syarat ↗'}</a></article>`
+                b => `<article class="card benefit-card ${b.available ? '' : 'locked'}"><div class="reward-symbol" style="font-size:32px">${b.icon}</div><span class="badge ${b.available ? 'green' : 'gray'}">${b.available ? 'Available' : 'Locked'}</span><h3>${b.title}</h3><p>${b.desc}</p><div class="benefit-condition">${b.available ? 'Available now.' : b.condition}</div><a class="btn ${b.available ? 'btn-primary' : 'btn-secondary'}" href="${b.available ? b.href : 'achievements.html'}">${b.available ? b.action : 'View Requirements ↗'}</a></article>`
             )
             .join('');
     }

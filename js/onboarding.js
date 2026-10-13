@@ -27,16 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 : 'Reading & Critical Thinking';
 
         recommendation.textContent =
-            txt + ' · rekomendasi berdasarkan minatmu';
+            txt + ' · recommendation based on your interests';
     }
 
     goal.addEventListener('change', () => {
         if (
-            goal.value.toLowerCase().includes('kreatif') ||
-            goal.value.toLowerCase().includes('skill digital')
+            goal.value.toLowerCase().includes('creative') ||
+            goal.value.toLowerCase().includes('digital skill')
         ) {
             selected.add('creative');
-        } else if (goal.value.toLowerCase().includes('rutinitas')) {
+        } else if (goal.value.toLowerCase().includes('routine')) {
             selected.add('healthy');
         } else {
             selected.add('learning');
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         LevelUpData.setProfile(p);
         LS.set('onboardingDone', true);
 
-        LevelUpUI.toast('Tujuan berhasil disimpan.');
+        LevelUpUI.toast('Goal saved successfully.');
 
         setTimeout(() => location.href = 'dashboard.html', 500);
     });

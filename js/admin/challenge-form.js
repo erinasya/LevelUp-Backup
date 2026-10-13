@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'healthy': 'Healthy Habits'
         })[categoryKey];
 
-        const dur = byId('challenge-duration').value.trim() || '5 hari';
+        const dur = byId('challenge-duration').value.trim() || '5 days';
 
         const tasks = byId('challenge-tasks').value
             .split('\n')
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             criteria = byId('challenge-criteria').value.trim();
 
         if (!title || !desc || !criteria) {
-            LevelUpUI.toast('Isi nama, deskripsi, dan kriteria penyelesaian.', 'error');
+            LevelUpUI.toast('Enter a name, description, and completion criteria.', 'error');
             form.reportValidity();
             return false;
         }
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const item = payload(forceStatus);
 
         if (item.status === 'active' && item.tasks.length === 0) {
-            LevelUpUI.toast('Challenge aktif harus memiliki minimal satu task.', 'error');
+            LevelUpUI.toast('An active challenge must have at least one task.', 'error');
             return false;
         }
 
@@ -121,12 +121,12 @@ document.addEventListener('DOMContentLoaded', () => {
         LevelUpData.setChallenges(arr);
 
         const paths = LevelUpData.getPaths();
-        let preservedStageName = 'Tahap ' + item.stage;
+        let preservedStageName = 'Stage ' + item.stage;
 
         paths.forEach(p => {
             if (!p.stages || !p.stages.length) {
                 p.stages = (p.challengeIds || []).map((cid, i) => ({
-                    name: 'Tahap ' + (i + 1),
+                    name: 'Stage ' + (i + 1),
                     challengeId: cid
                 }));
             }
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
             LevelUpData.setPaths(paths);
         }
 
-        LevelUpUI.toast('Challenge berhasil disimpan.');
+        LevelUpUI.toast('Challenge saved successfully.');
 
         setTimeout(() => location.href = 'challenges.html', 450);
 
@@ -179,8 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function preview() {
         byId('challenge-form-preview').innerHTML = `
             <span class="badge">${byId('challenge-category').selectedOptions[0].text}</span>
-            <h3 style="margin-top:10px">${LevelUpUI.escapeHTML(byId('challenge-title').value || 'Nama challenge')}</h3>
-            <p class="small">${LevelUpUI.escapeHTML(byId('challenge-description').value || 'Deskripsi singkat challenge.')}</p>
+            <h3 style="margin-top:10px">${LevelUpUI.escapeHTML(byId('challenge-title').value || 'Challenge name')}</h3>
+            <p class="small">${LevelUpUI.escapeHTML(byId('challenge-description').value || 'Short challenge description.')}</p>
             <p class="small muted">${LevelUpUI.escapeHTML(byId('challenge-duration').value)} · ${byId('challenge-xp').value || 0} XP</p>
         `;
     }

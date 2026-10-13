@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
             <header
                 class="topbar"
                 id="site-header"
-                aria-label="Navigasi LevelUp"
+                aria-label="LevelUp navigation"
             ></header>
 
             <aside
@@ -33,7 +33,7 @@
                         <span class="eyebrow">YOUR PERSONAL SPACE</span>
                         <h1>Profile & Settings</h1>
                         <p>
-                            Atur preferensi dan informasi yang mendukung perjalananmu.
+                            Manage preferences and information that support your journey.
                         </p>
                     </div>
                 </div>
@@ -43,14 +43,14 @@
                      class="profile-avatar"
                      id="profile-avatar"
                       role="img"
-                      aria-label="Foto profil Karina"
+                     aria-label="Karina's profile photo"
                 ></div>
 
                     <div>
                         <span class="badge teal">LEVELUP MEMBER</span>
                         <h2 id="profile-heading">Sarah</h2>
                         <p id="profile-summary">
-                            Anggota LevelUp · Growth at your own pace.
+                            LevelUp member · Growth at your own pace.
                         </p>
                     </div>
 
@@ -64,46 +64,46 @@
                         <div class="section-head">
                             <div>
                                 <span class="eyebrow">PERSONAL INFORMATION</span>
-                                <h2>Informasi profil</h2>
+                                <h2>Profile information</h2>
                             </div>
                         </div>
 
                         <div class="form-grid">
                             <div class="field field-full">
-                                <label for="profile-name">Nama</label>
+                                <label for="profile-name">Name</label>
                                 <input id="profile-name" required>
                             </div>
 
                             <div class="field field-full">
-                                <label for="profile-email">Email demo</label>
+                                <label for="profile-email">Demo email</label>
                                 <input id="profile-email" type="email" readonly>
                                 <span class="hint">
-                                    Email akun demo tidak dapat diganti di prototype.
+                                    The demo account email cannot be changed in this prototype.
                                 </span>
                             </div>
 
                             <div class="field field-full">
-                                <label for="profile-bio">Bio singkat</label>
+                                <label for="profile-bio">Short bio</label>
                                 <textarea
                                     id="profile-bio"
-                                    placeholder="Ceritakan tujuan atau minatmu"
+                                    placeholder="Tell us about your goals or interests"
                                 ></textarea>
                             </div>
 
                             <div class="field field-full">
-                                <label for="profile-goal">Tujuan utama</label>
+                                <label for="profile-goal">Main goal</label>
                                 <input
                                     id="profile-goal"
-                                    placeholder="Tujuan pengembangan diri"
+                                    placeholder="Personal development goal"
                                 >
                             </div>
 
                             <div class="field field-full">
-                                <label for="profile-time">Waktu yang tersedia</label>
+                                <label for="profile-time">Available time</label>
                                 <select id="profile-time">
-                                    <option>10–15 menit per hari</option>
-                                    <option>20–30 menit per hari</option>
-                                    <option>Beberapa sesi per minggu</option>
+                                    <option>10–15 minutes per day</option>
+                                    <option>20–30 minutes per day</option>
+                                    <option>Several sessions per week</option>
                                 </select>
                             </div>
                         </div>
@@ -113,41 +113,41 @@
                             class="btn btn-primary"
                             style="margin-top:17px"
                         >
-                            Simpan Perubahan
+                            Save Changes
                         </button>
                     </form>
 
                     <aside class="flow">
                         <article class="card">
                             <span class="eyebrow">PREFERENCES</span>
-                            <h2>Privasi dan preferensi</h2>
+                            <h2>Privacy and preferences</h2>
 
                             <label class="checkbox-row" style="margin:15px 0">
                                 <input type="checkbox" id="profile-public">
-                                Tampilkan achievement di profil publik (demo)
+                                Show achievements on public profile (demo)
                             </label>
 
                             <label class="checkbox-row" style="margin:15px 0">
                                 <input type="checkbox" id="profile-reminders" checked>
-                                Aktifkan pengingat demo
+                                Enable demo reminders
                             </label>
 
                             <p class="small">
-                                Data submission dan refleksi tetap privat secara default.
+                                Submission and reflection data remain private by default.
                             </p>
 
                             <button class="btn btn-secondary" id="save-preferences">
-                                Simpan Preferensi
+                                Save Preferences
                             </button>
                         </article>
 
                         <article class="card card-yellow">
                             <h3>Account</h3>
                             <p class="small">
-                                Kamu sedang menggunakan akun demo lokal di browser ini.
+                                You are using a local demo account in this browser.
                             </p>
                             <button class="btn btn-dark" data-logout>
-                                Keluar dari LevelUp ↗
+                                Sign out of LevelUp ↗
                             </button>
                         </article>
                     </aside>

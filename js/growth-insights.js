@@ -24,19 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
             ).length;
 
         document.getElementById('insights-completed').textContent =
-            done + ' challenge selesai';
+            done + ' challenges completed';
 
         document.getElementById('personal-best-number').textContent = done;
 
         document.getElementById('personal-best-copy').textContent =
             done
-                ? 'Challenge selesai berdasarkan catatan demo.'
-                : 'Selesaikan challenge pertama untuk mulai melihat riwayat.';
+                ? 'Challenges completed based on demo records.'
+                : 'Complete your first challenge to start seeing history.';
 
         document.getElementById('insights-summary').textContent =
             done
-                ? `Kamu sudah punya ${done} challenge yang tercatat selesai. Lihat kriteria berikutnya sebelum memilih langkah selanjutnya.`
-                : 'Perjalananmu dimulai ketika kamu memilih dan menyelesaikan challenge pertama.';
+                ? `You already have ${done} completed challenges recorded. Review the next criteria before choosing your next step.`
+                : 'Your journey begins when you choose and complete your first challenge.';
 
         const path =
             LevelUpData.getPaths().find(
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const bars = Array.from({ length: 7 }, (_, i) => {
             const h = [23, 42, 32, 58, 44, 68, 51][i];
 
-            return `<div class="chart-bar-wrap"><div class="chart-bar" style="height:${h}%"></div><span>${['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'][i]}</span></div>`;
+            return `<div class="chart-bar-wrap"><div class="chart-bar" style="height:${h}%"></div><span>${['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][i]}</span></div>`;
         }).join('');
 
         document.getElementById('insights-chart').innerHTML = bars;
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             `<div><div class="between"><span class="small">${k}</span><strong>${v}</strong></div><div class="progress-track" style="margin-top:4px"><div class="progress-fill" style="width:${v / (ens.length + subs.length || 1) * 100}%;background:${colors[i % colors.length]}"></div></div></div>`
                     )
                     .join('')
-                : '<p class="small">Kategori akan muncul setelah kamu mulai challenge.</p>';
+                : '<p class="small">Categories will appear after you start a challenge.</p>';
 
         const next = LevelUpData.getChallenges()
             .filter(c => c.status === 'active')
@@ -139,8 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('insights-next-step').innerHTML =
             next.map(LevelUpUI.challengeCard).join('') ||
             LevelUpUI.emptyState(
-                'Semua tahap selesai',
-                'Jelajahi jalur lain untuk tujuan baru.',
+                'All stages complete',
+                'Explore another path for a new goal.',
                 '<a class="btn btn-primary" href="challenges.html">Explore</a>'
             );
 
@@ -158,8 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .join('') ||
             LevelUpUI.emptyState(
-                'Belum ada riwayat',
-                'Aktivitasmu akan tercatat setelah kamu mengerjakan challenge.'
+                'No history yet',
+                'Your activity will be recorded after you complete a challenge.'
             );
     }
 

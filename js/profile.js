@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     set('profile-email', session.email);
     set('profile-bio', p.bio || '');
     set('profile-goal', p.goal || '');
-    set('profile-time', p.availableTime || '20–30 menit per hari');
+    set('profile-time', p.availableTime || '20–30 minutes per day');
 
     const prefs = LS.get('preferences', {});
 
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         avatar.style.backgroundPosition = 'center';
         avatar.style.backgroundRepeat = 'no-repeat';
 
-        LevelUpUI.toast('Profil demo berhasil disimpan.');
+        LevelUpUI.toast('Demo profile saved successfully.');
     });
 
     document.getElementById('save-preferences').addEventListener('click', () => {
@@ -88,6 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
             reminders: document.getElementById('profile-reminders').checked
         });
 
-        LevelUpUI.toast('Preferensi disimpan.');
+        LevelUpUI.toast('Preferences saved.');
     });
 });

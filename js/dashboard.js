@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ).length;
 
     document.getElementById('dashboard-path').innerHTML =
-        `<div class="dashboard-path-mini"><img src="${path.art}" alt=""><div style="flex:1"><div class="between"><strong>${LevelUpUI.escapeHTML(path.title)}</strong><span class="badge lavender">${done}/${relevant.length} tahap</span></div><p class="small">${LevelUpUI.escapeHTML(path.description)}</p><div class="progress-track"><div class="progress-fill" style="width:${relevant.length ? done / relevant.length * 100 : 0}%"></div></div><a class="link" href="growth-path.html?id=${path.id}">Lanjutkan perjalanan ↗</a></div></div>`;
+        `<div class="dashboard-path-mini"><img src="${path.art}" alt=""><div style="flex:1"><div class="between"><strong>${LevelUpUI.escapeHTML(path.title)}</strong><span class="badge lavender">${done}/${relevant.length} stages</span></div><p class="small">${LevelUpUI.escapeHTML(path.description)}</p><div class="progress-track"><div class="progress-fill" style="width:${relevant.length ? done / relevant.length * 100 : 0}%"></div></div><a class="link" href="growth-path.html?id=${path.id}">Continue the journey ↗</a></div></div>`;
 
     const activeIds = en
         .filter(e => e.status === 'in-progress')
@@ -81,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
         active.length
             ? active.slice(0, 3).map(LevelUpUI.challengeCard).join('')
             : LevelUpUI.emptyState(
-                'Belum ada challenge aktif',
-                'Pilih challenge pertamamu untuk memulai.',
+                'No active challenges yet',
+                'Choose your first challenge to get started.',
                 '<a class="btn btn-primary" href="challenges.html">Explore Challenges</a>'
             );
 
@@ -107,9 +107,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('dashboard-recommended').innerHTML =
         recommendation.map(LevelUpUI.challengeCard).join('') ||
         LevelUpUI.emptyState(
-            'Semua tertangani',
-            'Coba jelajahi jalur perkembangan lainnya.',
-            '<a class="btn btn-primary" href="challenges.html">Lihat Challenge</a>'
+            'Everything is covered',
+            'Try exploring another development path.',
+            '<a class="btn btn-primary" href="challenges.html">View Challenges</a>'
         );
 
     const earned = LS.get('earnedAchievements', []).filter(
@@ -127,11 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         x => x.id === a.achievementId
                     );
 
-                    return `<div class="activity-row"><div class="activity-icon">${c?.icon || '✦'}</div><div><strong>${c?.title || 'Achievement'}</strong><p>${c?.description || ''}</p></div><span class="badge yellow">Diraih</span></div>`;
+                    return `<div class="activity-row"><div class="activity-icon">${c?.icon || '✦'}</div><div><strong>${c?.title || 'Achievement'}</strong><p>${c?.description || ''}</p></div><span class="badge yellow">Earned</span></div>`;
                 })
                 .join('')
             : LevelUpUI.emptyState(
-                'Pencapaian pertamamu menunggu',
-                'Selesaikan challenge dan penuhi kriterianya untuk mendapatkan achievement.'
+                'Your first achievement is waiting',
+                'Complete a challenge and meet its criteria to earn an achievement.'
             );
 });

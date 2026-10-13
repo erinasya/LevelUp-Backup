@@ -49,7 +49,7 @@
 
             if (!preSub && !preEnrollment) {
                 LevelUpUI.toast(
-                    'Selesaikan prasyarat sebelum bergabung.',
+                    'Complete the prerequisite before joining.',
                     'error'
                 );
 
@@ -153,7 +153,7 @@
         if (!sub) return false;
 
         sub.status = 'approved';
-        sub.reviewReason = 'Submission memenuhi kriteria demo.';
+        sub.reviewReason = 'Submission meets the demo criteria.';
         sub.reviewedAt = new Date().toISOString();
         sub.reviewerId = userSession.userId;
 

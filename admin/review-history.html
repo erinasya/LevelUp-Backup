@@ -1,6 +1,6 @@
 ```html
 <!doctype html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
             <header
                 class="topbar"
                 id="site-header"
-                aria-label="Navigasi LevelUp"
+                aria-label="LevelUp navigation"
             ></header>
 
             <aside
@@ -34,7 +34,7 @@
                             <span class="eyebrow">DECISION LOG</span>
                             <h1>Review History</h1>
                             <p>
-                                Jejak keputusan membantu menjaga konsistensi dan akuntabilitas pemeriksaan.
+                                Decision records help maintain consistency and review accountability.
                             </p>
                         </div>
 
@@ -44,7 +44,7 @@
 
                 <section class="grid grid-3">
                     <article class="card stat-card card-green">
-                        <div class="stat-label">TOTAL KEPUTUSAN</div>
+                        <div class="stat-label">TOTAL DECISIONS</div>
                         <div class="stat-value" id="history-total">0</div>
                     </article>
 
@@ -65,7 +65,7 @@
                             class="search-input"
                             id="history-search"
                             type="search"
-                            placeholder="Cari submission, user, challenge..."
+                            placeholder="Search submissions, users, challenges..."
                         >
 
                         <select
@@ -73,7 +73,7 @@
                             id="history-decision"
                             style="max-width: 180px"
                         >
-                            <option value="all">Semua keputusan</option>
+                            <option value="all">All decisions</option>
                             <option value="approved">Approved</option>
                             <option value="rejected">Rejected</option>
                         </select>
@@ -83,13 +83,13 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Waktu</th>
+                                    <th>Date</th>
                                     <th>Submission</th>
                                     <th>User</th>
                                     <th>Challenge</th>
                                     <th>Reviewer</th>
-                                    <th>Keputusan</th>
-                                    <th>Alasan</th>
+                                    <th>Decision</th>
+                                    <th>Reason</th>
                                 </tr>
                             </thead>
 

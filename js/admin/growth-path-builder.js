@@ -22,19 +22,19 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="between">
                 <div class="row">
                     <span class="stage-number">${stageCounter}</span>
-                    <strong>Tahap ${stageCounter}</strong>
+                    <strong>Stage ${stageCounter}</strong>
                 </div>
-                <button type="button" class="btn btn-ghost btn-sm" data-remove-stage>Hapus</button>
+                <button type="button" class="btn btn-ghost btn-sm" data-remove-stage>Remove</button>
             </div>
             <div class="form-grid section" style="margin-top:14px">
                 <div class="field">
-                    <label>Nama tahap</label>
-                    <input data-stage-name required value="${LevelUpUI.escapeHTML(stage.name||'') }" placeholder="Contoh: Skill Foundation">
+                    <label>Stage name</label>
+                    <input data-stage-name required value="${LevelUpUI.escapeHTML(stage.name||'') }" placeholder="Example: Skill Foundation">
                 </div>
                 <div class="field">
                     <label>Challenge</label>
                     <select data-stage-challenge required>
-                        <option value="">Pilih challenge</option>
+                        <option value="">Select a challenge</option>
                         ${challengeOptions}
                     </select>
                 </div>
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         box.querySelector('[data-remove-stage]').addEventListener('click', () => {
             if (document.querySelectorAll('[data-stage-card]').length <= 1) {
-                LevelUpUI.toast('Growth Path memerlukan minimal satu tahap.', 'error');
+                LevelUpUI.toast('A Growth Path requires at least one stage.', 'error');
                 return;
             }
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renumber() {
         document.querySelectorAll('[data-stage-card]').forEach((el, i) => {
             el.querySelector('.stage-number').textContent = i + 1;
-            el.querySelector('.between strong').textContent = 'Tahap ' + (i + 1);
+            el.querySelector('.between strong').textContent = 'Stage ' + (i + 1);
         });
     }
 
@@ -70,13 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
         $('path-description-input').value = old.description;
         $('path-goal-input').value = old.goal || '';
         $('path-category-select').value = old.categoryKey || 'learning';
-        $('path-duration-input').value = old.duration || '14 hari';
+        $('path-duration-input').value = old.duration || '14 days';
         $('path-status-input').value = old.status || 'active';
 
         (old.stages?.length
             ? old.stages
             : old.challengeIds.map((id, i) => ({
-                name: `Tahap ${i + 1}`,
+                name: `Stage ${i + 1}`,
                 challengeId: id
             }))
         ).forEach(addStage);
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
             stages.some(s => !s.name || !s.challengeId)
         ) {
             LevelUpUI.toast(
-                'Lengkapi nama, deskripsi, dan challenge untuk setiap tahap.',
+                'Enter a name and description, and choose a challenge for every stage.',
                 'error'
             );
             return;
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (new Set(ids).size !== ids.length) {
             LevelUpUI.toast(
-                'Satu challenge tidak boleh dipakai pada dua tahap yang sama dalam path ini.',
+                'A challenge cannot be used in two stages of the same path.',
                 'error'
             );
             return;
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     'creative': 'Creative & Digital Skills',
                     'healthy': 'Healthy Habits'
                 })[cat],
-                duration: $('path-duration-input').value.trim() || '14 hari',
+                duration: $('path-duration-input').value.trim() || '14 days',
                 status: force || $('path-status-input').value,
                 challengeIds: ids,
                 stages,
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         LevelUpData.setPaths(arr);
 
-        LevelUpUI.toast('Growth Path tersimpan.');
+        LevelUpUI.toast('Growth Path saved.');
 
         setTimeout(() => location.href = 'growth-paths.html', 450);
     }
