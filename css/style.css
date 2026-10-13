@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
     --pool: #47B5A8;
@@ -1486,4 +1486,26 @@ tbody tr:hover {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+p,
+small,
+.small,
+.muted,
+.eyebrow,
+.badge,
+.stat-label,
+.field label,
+.challenge-meta,
+.progress-meta,
+.choice-card p,
+.challenge-card p,
+.activity-row p,
+.benefit-condition,
+.priority-label,
+.mini-metric span,
+.task-check span,
+.task-check small,
+.chart-legend span {
+    font-family: "Poppins", sans-serif;
 }
