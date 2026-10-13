@@ -1,5 +1,184 @@
-document.addEventListener('DOMContentLoaded',()=>{
- let category='all';const search=document.getElementById('challenge-search'),difficulty=document.getElementById('difficulty-filter'),duration=document.getElementById('duration-filter'),sort=document.getElementById('sort-filter'),grid=document.getElementById('challenge-grid'),empty=document.getElementById('challenge-empty');
- function render(){let list=LevelUpData.getChallenges().filter(c=>c.status==='active');const q=search.value.trim().toLowerCase();if(q)list=list.filter(c=>(c.title+' '+c.description+' '+c.category).toLowerCase().includes(q));if(category!=='all')list=list.filter(c=>c.categoryKey===category);if(difficulty.value!=='all')list=list.filter(c=>c.difficulty===difficulty.value);if(duration.value==='short')list=list.filter(c=>c.durationDays<=3);if(duration.value==='medium')list=list.filter(c=>c.durationDays>=4&&c.durationDays<=7);if(duration.value==='long')list=list.filter(c=>c.durationDays>7);if(sort.value==='duration')list.sort((a,b)=>a.durationDays-b.durationDays);if(sort.value==='xp')list.sort((a,b)=>b.xp-a.xp);if(sort.value==='recommended')list.sort((a,b)=>Number(b.featured)-Number(a.featured));document.getElementById('challenge-count').textContent=`${list.length} challenge ditemukan`;grid.innerHTML=list.map(LevelUpUI.challengeCard).join('');empty.classList.toggle('hidden',list.length>0);if(!list.length)empty.innerHTML=LevelUpUI.emptyState('Tidak ada challenge yang cocok','Coba ubah kata kunci atau filter.','<button class="btn btn-secondary" id="reset-challenge-filter">Reset Filter</button>');document.getElementById('reset-challenge-filter')?.addEventListener('click',()=>{search.value='';category='all';difficulty.value='all';duration.value='all';sort.value='recommended';document.querySelectorAll('[data-category]').forEach(b=>b.classList.toggle('active',b.dataset.category==='all'));render()})}
- [search,difficulty,duration,sort].forEach(el=>el.addEventListener('input',render));document.querySelectorAll('[data-category]').forEach(btn=>btn.addEventListener('click',()=>{category=btn.dataset.category;document.querySelectorAll('[data-category]').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',b===btn?'true':'false')});render()}));document.getElementById('challenge-path-grid').innerHTML=LevelUpData.getPaths().map(p=>`<article class="card path-card"><div class="path-art" style="background:${p.categoryKey==='learning'?'#F0E6F6':p.categoryKey==='creative'?'#FFF0E6':'#E7F2E7'}"><img src="${p.art}" alt=""></div><span class="badge">${p.category}</span><h3>${p.title}</h3><p>${p.description}</p><a class="btn btn-secondary" href="growth-path.html?id=${p.id}">Lihat Path ↗</a></article>`).join('');render();
+document.addEventListener('DOMContentLoaded', () => {
+    const user = LevelUpProgression.currentUser();
+    const id = new URLSearchParams(location.search).get('id') || 'reading-01';
+    const c = LevelUpData.challengeById(id) || LevelUpData.getChallenges()[0];
+
+    let en = LevelUpData.enrollmentFor(user?.id, c.id) ||
+        LevelUpProgression.createEnrollment(c.id);
+
+    if (!en) {
+        setTimeout(() => location.href = `challenge-detail.html?id=${c.id}`, 500);
+        return;
+    }
+
+    document.getElementById('session-title').textContent = c.title;
+    document.getElementById('session-subtitle').textContent = c.description;
+    document.getElementById('session-progress-title').textContent = c.title;
+    document.getElementById('session-step-title').textContent =
+        c.tasks[0] || 'Selesaikan aktivitas';
+    document.getElementById('session-step-desc').textContent =
+        c.objective || c.description;
+
+    document.getElementById('session-criteria').innerHTML =
+        `<div class="criteria-row"><span class="check">✓</span><span>${LevelUpUI.escapeHTML(c.criteria)}</span></div>`;
+
+    const taskRoot = document.getElementById('session-tasks');
+    let completed = new Set(en.completedTasks || []);
+
+    taskRoot.innerHTML = c.tasks
+        .map((task, i) => `<label class="task-check ${completed.has(i) ? 'done' : ''}"><input type="checkbox" data-task-index="${i}" ${completed.has(i) ? 'checked' : ''}><span>${LevelUpUI.escapeHTML(task)}<small>Tugas ${i + 1} dari ${c.tasks.length}</small></span></label>`)
+        .join('');
+
+    const noteInput = document.getElementById('session-note');
+
+    noteInput.value =
+        LS.get('sessionNotes', {})[`${user.id}:${c.id}`] || '';
+
+    const timerLabel = document.getElementById('session-timer');
+    const totalSecs = Math.max(60, Number(c.minutes || 20) * 60);
+
+    let remaining = totalSecs;
+    let interval = null;
+
+    function drawTimer() {
+        timerLabel.textContent =
+            `${String(Math.floor(remaining / 60)).padStart(2, '0')}:${String(remaining % 60).padStart(2, '0')}`;
+    }
+
+    function pause() {
+        if (interval) {
+            clearInterval(interval);
+            interval = null;
+        }
+
+        document.getElementById('timer-pause').disabled = true;
+        document.getElementById('timer-start').disabled = false;
+    }
+
+    document.getElementById('timer-start').addEventListener('click', () => {
+        if (interval) return;
+
+        document.getElementById('timer-start').disabled = true;
+        document.getElementById('timer-pause').disabled = false;
+
+        interval = setInterval(() => {
+            remaining = Math.max(0, remaining - 1);
+            drawTimer();
+
+            if (remaining === 0) {
+                pause();
+                LevelUpUI.toast(
+                    'Waktu sesi berakhir. Catat hasilmu sebelum melanjutkan.'
+                );
+            }
+        }, 1000);
+    });
+
+    document.getElementById('timer-pause').addEventListener('click', pause);
+
+    document.getElementById('timer-reset').addEventListener('click', () => {
+        pause();
+        remaining = totalSecs;
+        drawTimer();
+    });
+
+    drawTimer();
+
+    function refresh() {
+        const pct = Math.round(
+            completed.size / (c.tasks.length || 1) * 100
+        );
+
+        document.getElementById('task-count').textContent =
+            `${completed.size}/${c.tasks.length}`;
+
+        document.getElementById('session-progress-percent').textContent =
+            pct + '%';
+
+        document.getElementById('session-progress-bar').style.width =
+            pct + '%';
+
+        document.getElementById('session-progress-copy').textContent =
+            pct === 100
+                ? 'Semua task selesai. Kamu dapat menyiapkan submission.'
+                : `Selesaikan ${c.tasks.length - completed.size} tugas lagi untuk menuntaskan checklist.`;
+
+        document.getElementById('go-submit').classList.toggle(
+            'disabled',
+            pct < 100
+        );
+
+        document.getElementById('go-submit').setAttribute(
+            'aria-disabled',
+            pct < 100 ? 'true' : 'false'
+        );
+
+        document.getElementById('go-submit').href =
+            pct === 100 ? `proof-submission.html?id=${c.id}` : '#';
+
+        taskRoot.querySelectorAll('[data-task-index]').forEach(input => {
+            input.closest('.task-check').classList.toggle(
+                'done',
+                input.checked
+            );
+        });
+    }
+
+    taskRoot.querySelectorAll('[data-task-index]').forEach(input => {
+        input.addEventListener('change', () => {
+            const i = Number(input.dataset.taskIndex);
+
+            input.checked
+                ? completed.add(i)
+                : completed.delete(i);
+
+            refresh();
+        });
+    });
+
+    document.getElementById('save-session').addEventListener('click', () => {
+        const pct = Math.round(
+            completed.size / (c.tasks.length || 1) * 100
+        );
+
+        LevelUpProgression.updateEnrollment(c.id, {
+            completedTasks: [...completed],
+            progress: pct,
+            status: 'in-progress'
+        });
+
+        const notes = LS.get('sessionNotes', {});
+        notes[`${user.id}:${c.id}`] = noteInput.value;
+
+        LS.set('sessionNotes', notes);
+
+        LevelUpUI.toast('Progress sesi disimpan.');
+        refresh();
+    });
+
+    document.getElementById('go-submit').addEventListener('click', e => {
+        if (completed.size < c.tasks.length) {
+            e.preventDefault();
+
+            LevelUpUI.toast(
+                'Selesaikan checklist dulu sebelum submission.',
+                'error'
+            );
+
+            return;
+        }
+
+        LevelUpProgression.updateEnrollment(c.id, {
+            completedTasks: [...completed],
+            progress: 100,
+            status: 'in-progress'
+        });
+
+        const notes = LS.get('sessionNotes', {});
+        notes[`${user.id}:${c.id}`] = noteInput.value;
+
+        LS.set('sessionNotes', notes);
+    });
+
+    refresh();
 });
