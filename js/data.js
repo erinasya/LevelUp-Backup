@@ -387,14 +387,14 @@
     const users = [
         {
             id: 'user-demo',
-            name: 'Sarah',
+            name: 'Karina',
             email: 'user@levelup.id',
             password: 'user123',
             role: 'user',
             goal: 'Membangun kebiasaan belajar dan berpikir kritis',
             interests: ['learning'],
             availableTime: '20–30 menit per hari',
-            avatar: 'S'
+            avatar: 'assets/images/avatars/karina.jpg'
         },
         {
             id: 'admin-demo',
@@ -514,4 +514,33 @@
     };
 
     seed();
+
+    const updatedUsers = LS.get('users', []).map(user =>
+    user.id === 'user-demo'
+        ? {
+            ...user,
+            name: 'Karina',
+            avatar: 'assets/images/avatars/karina.jpg'
+        }
+        : user
+);
+
+LS.set('users', updatedUsers);
+
+const currentProfile = LS.get('profile', {});
+LS.set('profile', {
+    ...currentProfile,
+    name: 'Karina',
+    avatar: 'assets/images/avatars/karina.jpg'
+});
+
+const currentSession = LS.get('session', null);
+
+if (currentSession?.userId === 'user-demo') {
+    LS.set('session', {
+        ...currentSession,
+        name: 'Karina'
+    });
+}
+
 })();

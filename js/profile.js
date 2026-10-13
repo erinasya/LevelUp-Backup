@@ -14,8 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('profile-heading').textContent =
         user?.name || session.name;
 
-    document.getElementById('profile-avatar').textContent =
-        (user?.name || session.name).charAt(0).toUpperCase();
+   const avatar = document.getElementById('profile-avatar');
+
+    avatar.textContent = '';
+    avatar.style.backgroundImage = "url('assets/images/avatars/karina.jpg')";
+    avatar.style.backgroundSize = 'cover';
+    avatar.style.backgroundPosition = 'center';
+    avatar.style.backgroundRepeat = 'no-repeat';
 
     document.getElementById('profile-summary').textContent =
         session.email;
@@ -66,8 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('profile-heading').textContent =
             next.name;
 
-        document.getElementById('profile-avatar').textContent =
-            next.name.charAt(0).toUpperCase();
+       const avatar = document.getElementById('profile-avatar');
+
+        avatar.textContent = '';
+        avatar.style.backgroundImage = "url('assets/images/avatars/karina.jpg')";
+        avatar.style.backgroundSize = 'cover';
+        avatar.style.backgroundPosition = 'center';
+        avatar.style.backgroundRepeat = 'no-repeat';
 
         LevelUpUI.toast('Profil demo berhasil disimpan.');
     });

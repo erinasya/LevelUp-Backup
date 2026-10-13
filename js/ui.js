@@ -126,12 +126,15 @@
                     type="button"
                 >⌕</button>
 
-                <div
-                    class="avatar"
-                    title="${escapeHTML(session?.name || 'User')}"
+               <div
+                class="avatar"
+                title="${escapeHTML(session?.name || 'User')}"
                 >
-                    ${escapeHTML((session?.name || 'U').trim().charAt(0).toUpperCase())}
-                </div>
+                 <img
+                src="${root()}assets/images/avatars/karina.jpg"
+                alt="Foto profil Karina"
+                >
+            </div>
 
                 <button
                     class="icon-button"
