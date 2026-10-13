@@ -132,3 +132,40 @@
     height: auto;
     display: block;
 }
+
+.login-visual {
+    background-color: #CBE7FF;
+
+    background-image:
+        radial-gradient(
+            ellipse at 88% 82%,
+            rgba(71, 181, 168, 0.18) 0%,
+            rgba(71, 181, 168, 0) 42%
+        ),
+        radial-gradient(
+            ellipse at 85% 12%,
+            rgba(247, 226, 137, 0.28) 0%,
+            rgba(247, 226, 137, 0) 34%
+        ),
+        linear-gradient(
+            135deg,
+            #CBE7FF 0%,
+            #DCEBFA 38%,
+            #EDE2F2 72%,
+            #F8F4EC 100%
+        );
+
+    background-size:
+        100% 100%,
+        100% 100%,
+        100% 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-visual::before {
+    content: none;
+    display: none;
+    background-image: none;
+}
