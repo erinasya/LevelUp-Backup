@@ -43,24 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', doLogin);
 
-    document.querySelectorAll('[data-demo-login]').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const role = btn.dataset.demoLogin;
-
-            email.value =
-                role === 'admin'
-                    ? 'admin@levelup.id'
-                    : 'user@levelup.id';
-
-            password.value =
-                role === 'admin'
-                    ? 'admin123'
-                    : 'user123';
-
-            doLogin();
-        });
-    });
-
     document.getElementById('show-password')?.addEventListener(
         'change',
         e => {
