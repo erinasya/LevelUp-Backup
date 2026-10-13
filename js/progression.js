@@ -153,7 +153,7 @@
         if (!sub) return false;
 
         sub.status = 'approved';
-        sub.reviewReason = 'Submission meets the demo criteria.';
+        sub.reviewReason = 'Submission meets the criteria.';
         sub.reviewedAt = new Date().toISOString();
         sub.reviewerId = userSession.userId;
 

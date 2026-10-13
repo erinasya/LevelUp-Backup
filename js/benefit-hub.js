@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: 'A quick guide to writing a reading summary and reflection.',
             icon: '📘',
             category: 'learning',
-            condition: 'Available as demo material.',
+            condition: 'Available as a learning resource.',
             available: true,
             action: 'Open Guide',
             href: 'growth-path.html?id=reading-path'
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: 'A template for planning weekly study and review sessions.',
             icon: '🗓️',
             category: 'learning',
-            condition: 'Available as demo material.',
+            condition: 'Available as a planning resource.',
             available: true,
             action: 'View Growth Plan',
             href: 'growth-plan.html'

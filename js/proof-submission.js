@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             LevelUpData.setSubmissions(arr);
         }
 
-        LevelUpUI.toast('Demo submission sent successfully.');
+        LevelUpUI.toast('Submission sent successfully.');
 
         setTimeout(
             () => location.href = `submission-status.html?id=${sub.id}`,

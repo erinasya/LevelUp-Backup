@@ -176,9 +176,6 @@
                 <span>
                     © ${new Date().getFullYear()} LevelUp · Grow with Purpose. Progress with Proof.
                 </span>
-                <span>
-                    Frontend demo · Data is stored in your browser
-                </span>
             `;
         }
     }

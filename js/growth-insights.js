@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('personal-best-copy').textContent =
             done
-                ? 'Challenges completed based on demo records.'
+                ? 'Challenges completed so far.'
                 : 'Complete your first challenge to start seeing history.';
 
         document.getElementById('insights-summary').textContent =

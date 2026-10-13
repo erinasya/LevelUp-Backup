@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         avatar.style.backgroundPosition = 'center';
         avatar.style.backgroundRepeat = 'no-repeat';
 
-        LevelUpUI.toast('Demo profile saved successfully.');
+        LevelUpUI.toast('Profile saved successfully.');
     });
 
     document.getElementById('save-preferences').addEventListener('click', () => {

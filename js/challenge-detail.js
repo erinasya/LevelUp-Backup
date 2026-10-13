@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `<span class="badge lavender">${LevelUpUI.escapeHTML(c.proofType)}</span><p class="small" style="margin-top:10px">Verification: ${LevelUpUI.escapeHTML(c.verification)}. Proof is checked against challenge criteria; uploading a file alone is not automatic proof that the activity was completed.</p>`;
 
     document.getElementById('detail-reward').innerHTML =
-        `<div class="row"><div class="icon-tile">✦</div><div><strong>${c.xp} XP</strong><p class="small">XP is awarded according to the demo rules after a valid decision.</p></div></div>${c.prerequisite ? `<div class="notice warning" style="margin-top:12px">Prerequisite: ${LevelUpData.challengeById(c.prerequisite)?.title || c.prerequisite}</div>` : '<div class="notice success" style="margin-top:12px">No prerequisite required.</div>'}`;
+        `<div class="row"><div class="icon-tile">✦</div><div><strong>${c.xp} XP</strong><p class="small">XP is awarded when a submission is approved.</p></div></div>${c.prerequisite ? `<div class="notice warning" style="margin-top:12px">Prerequisite: ${LevelUpData.challengeById(c.prerequisite)?.title || c.prerequisite}</div>` : '<div class="notice success" style="margin-top:12px">No prerequisite required.</div>'}`;
 
     const link = document.getElementById('detail-bottom-cta');
 

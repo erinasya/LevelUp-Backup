@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             stage: Number(document.getElementById('xp-stage').value) || 0
         });
 
-        LevelUpUI.toast('Aturan XP demo diperbarui.');
+        LevelUpUI.toast('XP rules updated.');
     });
 
     document.getElementById('reward-achievement-table').innerHTML =

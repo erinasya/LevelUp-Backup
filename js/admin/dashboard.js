@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return `
                 <tr>
                     <td>
-                        <div class="table-title">${u?.name || 'Demo User'}</div>
+                        <div class="table-title">${u?.name || 'User'}</div>
                         <div class="table-sub">${u?.email || ''}</div>
                     </td>
                     <td>${LevelUpUI.escapeHTML(c?.title || '—')}</td>
@@ -79,5 +79,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         })
-        .join('') || '<p class="muted small">No review decisions have been made in this demo session.</p>';
+        .join('') || '<p class="muted small">No review decisions have been recorded yet.</p>';
 });
